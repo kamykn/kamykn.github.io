@@ -1,6 +1,6 @@
 
 ---
-title: "gormでJOINを使う(Golang)"
+title: "gormで実行されているクエリ(SQL文)を確認する"
 date: 2016-12-19T16:34:51+09:00
 draft: false
 tags:
