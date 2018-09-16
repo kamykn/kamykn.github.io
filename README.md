@@ -20,5 +20,8 @@ hugo new post/<記事名>.md
 # push
 git push origin HEAD # いつもの
 git subtree push --prefix public origin master # subtree の push
+
+# submodule更新 (これ忘れるとhugoコマンドで静的ファイルが作られない)
+git submodule update
 ```
 
