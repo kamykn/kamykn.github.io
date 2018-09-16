@@ -41,7 +41,7 @@ pygmentsUseClassic = true
   # gravatarEmail = "thibaud.lepretre@gmail.com"
   # Your profile picture
   # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-  picture = "https://avatars2.githubusercontent.com/u/7608231?s=460&v=4"
+  picture = "/images/icon/kmszk4_circle_s.pngv=4"
   # Your Twitter username without the @. E.g : thibaudlepretre
   twitter = "_kamykn_"
   # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
