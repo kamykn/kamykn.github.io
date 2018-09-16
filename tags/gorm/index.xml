@@ -13,10 +13,10 @@
     
     <item>
       <title>gormで実行されているクエリ(SQL文)を確認する</title>
-      <link>https://kamykn.github.io/2016/12/gorm%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%82%AF%E3%82%A8%E3%83%AAsql%E6%96%87%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B/</link>
+      <link>https://kamykn.github.io/post/gorm%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%82%AF%E3%82%A8%E3%83%AAsql%E6%96%87%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B/</link>
       <pubDate>Mon, 19 Dec 2016 16:34:51 +0900</pubDate>
       
-      <guid>https://kamykn.github.io/2016/12/gorm%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%82%AF%E3%82%A8%E3%83%AAsql%E6%96%87%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B/</guid>
+      <guid>https://kamykn.github.io/post/gorm%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%82%AF%E3%82%A8%E3%83%AAsql%E6%96%87%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B/</guid>
       <description>&lt;p&gt;下記のように実行しているgormの裏側で実行されているクエリが知りたい場合には…&lt;/p&gt;
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;db&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Where&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;id = ?&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;accountID&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;Find&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;account&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>gormでJOINを使う(Golang)</title>
-      <link>https://kamykn.github.io/2016/12/gorm%E3%81%A7join%E3%82%92%E4%BD%BF%E3%81%86golang/</link>
+      <link>https://kamykn.github.io/post/gorm%E3%81%A7join%E3%82%92%E4%BD%BF%E3%81%86golang/</link>
       <pubDate>Mon, 19 Dec 2016 16:21:11 +0900</pubDate>
       
-      <guid>https://kamykn.github.io/2016/12/gorm%E3%81%A7join%E3%82%92%E4%BD%BF%E3%81%86golang/</guid>
+      <guid>https://kamykn.github.io/post/gorm%E3%81%A7join%E3%82%92%E4%BD%BF%E3%81%86golang/</guid>
       <description>&lt;p&gt;今回は、gormで返り値にJoinされる方のテーブルの値は取れているが、Joinする方のテーブルの値が取れていないときのTips。
 結論から言うと、JOINを使う場合にはSelect()を指定することと、変数の型に注意。&lt;/p&gt;
 
@@ -38,10 +38,10 @@
     
     <item>
       <title>Gormでdeleted_atつけてソフトデリートにする</title>
-      <link>https://kamykn.github.io/2016/12/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</link>
+      <link>https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</link>
       <pubDate>Sun, 11 Dec 2016 00:05:26 +0900</pubDate>
       
-      <guid>https://kamykn.github.io/2016/12/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</guid>
+      <guid>https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</guid>
       <description>&lt;p&gt;言語での開発ではモデル周りはgorm使っています。&lt;br /&gt;
 ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。&lt;/p&gt;
 
