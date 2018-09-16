@@ -25,7 +25,7 @@ canonifyurls = true
 pygmentsUseClassic = true
 
 [permalinks]
-  post = "/:year/:month/:title/"
+  post = "/:section/:title"
 
 [taxonomies]
   tag = "tags"
