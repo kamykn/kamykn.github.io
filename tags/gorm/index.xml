@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>kamykn techlog</title>
-    <link>https://kamykn.github.io/</link>
-    <description>Recent content on kamykn techlog</description>
+    <title>Gorm on kamykn techlog</title>
+    <link>https://kamykn.github.io/tags/gorm/</link>
+    <description>Recent content in Gorm on kamykn techlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 04 Nov 2017 23:56:49 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 19 Dec 2016 16:34:51 +0900</lastBuildDate>
     
-	<atom:link href="https://kamykn.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kamykn.github.io/tags/gorm/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Vimconf2017行ってきた</title>
-      <link>https://kamykn.github.io/2017/11/vimconf2017%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</link>
-      <pubDate>Sat, 04 Nov 2017 23:56:49 +0900</pubDate>
-      
-      <guid>https://kamykn.github.io/2017/11/vimconf2017%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</guid>
-      <description>&lt;p&gt;※この記事は旧ブログから当ブログに記事を移行しました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://kamykn.github.io/images/post/20171105000423.jpg&#34; alt=&#34;VimConf2017&#34; title=&#34;VimConf2017&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>gormでJOINを使う(Golang)</title>
@@ -45,41 +32,6 @@
       <guid>https://kamykn.github.io/2016/12/gorm%E3%81%A7join%E3%82%92%E4%BD%BF%E3%81%86golang/</guid>
       <description>&lt;p&gt;今回は、gormで返り値にJoinされる方のテーブルの値は取れているが、Joinする方のテーブルの値が取れていないときのTips。
 結論から言うと、JOINを使う場合にはSelect()を指定することと、変数の型に注意。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>返り値で型指定するDuck Typing</title>
-      <link>https://kamykn.github.io/2016/12/%E8%BF%94%E3%82%8A%E5%80%A4%E3%81%A7%E5%9E%8B%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8Bduck-typing/</link>
-      <pubDate>Fri, 16 Dec 2016 01:11:27 +0900</pubDate>
-      
-      <guid>https://kamykn.github.io/2016/12/%E8%BF%94%E3%82%8A%E5%80%A4%E3%81%A7%E5%9E%8B%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8Bduck-typing/</guid>
-      <description>&lt;p&gt;Go言語では様々な形でダックタイピングが可能です。
-今回はGo言語で利用可能な返り値の型指定を利用する例を紹介します。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Revelの親コントローラを作成する</title>
-      <link>https://kamykn.github.io/2016/12/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
-      <pubDate>Mon, 12 Dec 2016 10:35:50 +0900</pubDate>
-      
-      <guid>https://kamykn.github.io/2016/12/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
-      <description>&lt;p&gt;親コントローラ生成について
-親コントローラ（ドキュメントではExtending the Controllerとなっているが）は下記のドキュメントのように作成すると良い。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Gormでdeleted_atつけてソフトデリートにする</title>
-      <link>https://kamykn.github.io/2016/12/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</link>
-      <pubDate>Sun, 11 Dec 2016 12:35:45 +0900</pubDate>
-      
-      <guid>https://kamykn.github.io/2016/12/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</guid>
-      <description>&lt;p&gt;まずは上手く取れた記述から&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
