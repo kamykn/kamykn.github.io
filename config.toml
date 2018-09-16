@@ -77,7 +77,7 @@ pygmentsUseClassic = true
   weight = 2
   identifier = "Qiita"
   name = "Qiita"
-  pre = "<span class=\"sidebar-custom-button-icon\"><img src=\"/images/icon/q.png\"></span>"
+  pre = "<i class=\"sidebar-button-icon sidebar-custom-button-icon\"><img src=\"/images/icon/q.png\"></i>"
   url = "https://qiita.com/kamykn"
 
 [[menu.misc]]
