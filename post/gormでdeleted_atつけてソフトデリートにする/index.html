@@ -8,37 +8,33 @@
 <meta name="generator" content="Hugo 0.48 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="kamykn(かみけん)">
 <meta name="keywords" content="">
-<meta name="description" content="言語での開発ではモデル周りはgorm使っています。
-ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。
+<meta name="description" content="まずは上手く取れた記述から
 
 ">
 
 
-<meta property="og:description" content="言語での開発ではモデル周りはgorm使っています。
-ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。
+<meta property="og:description" content="まずは上手く取れた記述から
 
 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gormでdeleted_atつけてソフトデリートにする">
 <meta name="twitter:title" content="Gormでdeleted_atつけてソフトデリートにする">
-<meta property="og:url" content="/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
-<meta property="twitter:url" content="/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+<meta property="og:url" content="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+<meta property="twitter:url" content="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
 <meta property="og:site_name" content="kamykn techlog">
-<meta property="og:description" content="言語での開発ではモデル周りはgorm使っています。
-ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。
+<meta property="og:description" content="まずは上手く取れた記述から
 
 ">
-<meta name="twitter:description" content="言語での開発ではモデル周りはgorm使っています。
-ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。
+<meta name="twitter:description" content="まずは上手く取れた記述から
 
 ">
 <meta property="og:locale" content="ja-jp">
 
   
-    <meta property="article:published_time" content="2016-12-11T00:05:26">
+    <meta property="article:published_time" content="2016-12-11T12:35:45">
   
   
-    <meta property="article:modified_time" content="2016-12-11T00:05:26">
+    <meta property="article:modified_time" content="2016-12-11T12:35:45">
   
   
   
@@ -46,7 +42,7 @@
     
       <meta property="article:tag" content="golang">
     
-      <meta property="article:tag" content="gorm">
+      <meta property="article:tag" content="revel">
     
   
 
@@ -67,18 +63,18 @@
 
 
 
-  <meta property="og:image" content="/images/icon/kmszk4_circle_s.png">
-  <meta property="twitter:image" content="/images/icon/kmszk4_circle_s.png">
+  <meta property="og:image" content="https://kamykn.github.io/images/icon/kmszk4_circle_s.png">
+  <meta property="twitter:image" content="https://kamykn.github.io/images/icon/kmszk4_circle_s.png">
 
 
     <title>Gormでdeleted_atつけてソフトデリートにする</title>
 
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="https://kamykn.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+    <link rel="canonical" href="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -86,11 +82,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://kamykn.github.io/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
     
     
       
-        <link rel="stylesheet"  href="/css/mystyle.css">
+        <link rel="stylesheet"  href="https://kamykn.github.io/css/mystyle.css">
       
     
 
@@ -105,17 +101,17 @@
       <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="/">kamykn techlog</a>
+    <a class="header-title-link" href="https://kamykn.github.io/">kamykn techlog</a>
   </div>
   
     
       <a class="header-right-picture "
-         href="/#about">
+         href="https://kamykn.github.io/#about">
     
     
     
       
-        <img class="header-picture" src="/images/icon/kmszk4_circle_s.png" alt="" />
+        <img class="header-picture" src="https://kamykn.github.io/images/icon/kmszk4_circle_s.png" alt="" />
       
     
     </a>
@@ -126,8 +122,8 @@
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
-        <a href="/#about">
-          <img class="sidebar-profile-picture" src="/images/icon/kmszk4_circle_s.png" alt="" />
+        <a href="https://kamykn.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://kamykn.github.io/images/icon/kmszk4_circle_s.png" alt="" />
         </a>
         <h4 class="sidebar-profile-name">kamykn(かみけん)</h4>
         
@@ -139,7 +135,7 @@
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="/">
+      <a class="sidebar-button-link " href="https://kamykn.github.io/">
     
       <i class="sidebar-button-icon fa fa-lg fa-home"></i>
       
@@ -149,7 +145,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="/tags">
+      <a class="sidebar-button-link " href="https://kamykn.github.io/tags">
     
       <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
       
@@ -159,7 +155,7 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="/#about">
+      <a class="sidebar-button-link " href="https://kamykn.github.io/#about">
     
       <i class="sidebar-button-icon fa fa-lg fa-question"></i>
       
@@ -173,7 +169,7 @@
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://github.com/kamykn">
+      <a class="sidebar-button-link " href="https://github.com/kamykn" target="_blank" rel="noopener">
     
       <i class="sidebar-button-icon fa fa-lg fa-github"></i>
       
@@ -183,9 +179,9 @@
 
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="https://qiita.com/kamykn">
+      <a class="sidebar-button-link " href="https://qiita.com/kamykn" target="_blank" rel="noopener">
     
-      <span class="sidebar-custom-button-icon"><img src="/images/icon/q.png"></span>
+      <span class="sidebar-custom-button-icon"><img src="https://kamykn.github.io/images/icon/q.png"></span>
       
       <span class="sidebar-button-desc">Qiita</span>
     </a>
@@ -197,7 +193,7 @@
       
   <li class="sidebar-button">
     
-      <a class="sidebar-button-link " href="/index.xml">
+      <a class="sidebar-button-link " href="https://kamykn.github.io/index.xml">
     
       <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
       
@@ -228,7 +224,7 @@
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2016-12-11T00:05:26&#43;09:00">
+      <time itemprop="datePublished" datetime="2016-12-11T12:35:45&#43;09:00">
         
    11, 2016
 
@@ -241,29 +237,161 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>言語での開発ではモデル周りはgorm使っています。<br />
-ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。</p>
+              <p>まずは上手く取れた記述から</p>
 
 <p></p>
 
-<h1 id="以下のように記述するとok">以下のように記述するとOK</h1>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1</span><span style="color:#f92672">package</span> <span style="color:#a6e22e">models</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1</span><span style="color:#f92672">package</span> <span style="color:#a6e22e">controllers</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3</span><span style="color:#f92672">import</span> (
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4</span>    <span style="color:#e6db74">&#34;time&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5</span>	)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4</span>    <span style="color:#e6db74">&#34;github.com/revel/revel&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5</span>)
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7</span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Table</span> <span style="color:#66d9ef">struct</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8</span>	<span style="color:#a6e22e">ID</span>      <span style="color:#66d9ef">int</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9</span>	<span style="color:#a6e22e">CreatedAt</span>       <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Time</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10</span>	<span style="color:#a6e22e">UpdatedAt</span>       <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Time</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11</span>	<span style="color:#a6e22e">DeletedAt</span>       <span style="color:#f92672">*</span><span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Time</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12</span>}</code></pre></div>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7</span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Mycontroller</span> <span style="color:#66d9ef">struct</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8</span>    <span style="color:#f92672">*</span><span style="color:#a6e22e">revel</span>.<span style="color:#a6e22e">Controller</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12</span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">m</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Mycontroller</span>) <span style="color:#a6e22e">Index</span>() <span style="color:#a6e22e">revel</span>.<span style="color:#a6e22e">Result</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13</span>    <span style="color:#75715e">// redirectURLの取得
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">requestedHost</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">Request</span>.<span style="color:#a6e22e">Host</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16</span>    <span style="color:#a6e22e">requestedScheme</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;http&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17</span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">Request</span>.<span style="color:#a6e22e">TLS</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18</span>        <span style="color:#a6e22e">requestedScheme</span> = <span style="color:#e6db74">&#34;https&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21</span>    <span style="color:#75715e">// ホスト名
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">revel</span>.<span style="color:#a6e22e">TRACE</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">requestedHost</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24</span>    <span style="color:#75715e">// おまけにスキームも判断してみる（httpかhttpsか）
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">revel</span>.<span style="color:#a6e22e">TRACE</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">requestedScheme</span>);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26</span>}</code></pre></div>
 
-<p>DeletedAtだけ*time.Timeになることに注意。</p>
+<h1 id="これで取れる理由">これで取れる理由</h1>
 
-<p>デフォルトでカラムにnull以外が入っているとgormのソフトデリート的には削除済み扱いになってしまうみたいです。</p>
+<p>Controllerが継承している構造体を見ていくと、</p>
+
+<p>[<a href="https://github.com/revel/revel/blob/master/controller.go:embed:cite">https://github.com/revel/revel/blob/master/controller.go:embed:cite</a>]</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1</span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Controller</span> <span style="color:#66d9ef">struct</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2</span>	<span style="color:#a6e22e">Name</span>          <span style="color:#66d9ef">string</span>          <span style="color:#75715e">// The controller name, e.g. &#34;Application&#34;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Type</span>          <span style="color:#f92672">*</span><span style="color:#a6e22e">ControllerType</span> <span style="color:#75715e">// A description of the controller type.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">MethodName</span>    <span style="color:#66d9ef">string</span>          <span style="color:#75715e">// The method name, e.g. &#34;Index&#34;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">MethodType</span>    <span style="color:#f92672">*</span><span style="color:#a6e22e">MethodType</span>     <span style="color:#75715e">// A description of the invoked action type.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">AppController</span> <span style="color:#66d9ef">interface</span>{}     <span style="color:#75715e">// The controller that was instantiated.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Action</span>        <span style="color:#66d9ef">string</span>          <span style="color:#75715e">// The fully qualified action name, e.g. &#34;App.Index&#34;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8</span><span style="color:#75715e"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9</span>	<span style="color:#a6e22e">Request</span>  <span style="color:#f92672">*</span><span style="color:#a6e22e">Request</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10</span>	<span style="color:#a6e22e">Response</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Response</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11</span>	<span style="color:#a6e22e">Result</span>   <span style="color:#a6e22e">Result</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13</span>	<span style="color:#a6e22e">Flash</span>      <span style="color:#a6e22e">Flash</span>                  <span style="color:#75715e">// User cookie, cleared after 1 request.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Session</span>    <span style="color:#a6e22e">Session</span>                <span style="color:#75715e">// Session, stored in cookie, signed.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Params</span>     <span style="color:#f92672">*</span><span style="color:#a6e22e">Params</span>                <span style="color:#75715e">// Parameters from URL and form (including multipart).
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Args</span>       <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">interface</span>{} <span style="color:#75715e">// Per-request scratch space.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">RenderArgs</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">interface</span>{} <span style="color:#75715e">// Args passed to the template.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Validation</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Validation</span>            <span style="color:#75715e">// Data validation helpers
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19</span><span style="color:#75715e"></span>}</code></pre></div>
+
+<p>Requestを継承している事がわかる。</p>
+
+<p>Requestをもう少し見てみよう。</p>
+
+<p>[<a href="https://golang.org/pkg/net/http/#Request:title">https://golang.org/pkg/net/http/#Request:title</a>]</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1</span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Request</span> <span style="color:#66d9ef">struct</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3</span>        <span style="color:#75715e">// 〜中略〜
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4</span><span style="color:#75715e"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5</span>        <span style="color:#75715e">// URL specifies either the URI being requested (for server
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6</span><span style="color:#75715e"></span>        <span style="color:#75715e">// requests) or the URL to access (for client requests).
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8</span><span style="color:#75715e"></span>        <span style="color:#75715e">// For server requests the URL is parsed from the URI
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9</span><span style="color:#75715e"></span>        <span style="color:#75715e">// supplied on the Request-Line as stored in RequestURI.  For
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10</span><span style="color:#75715e"></span>        <span style="color:#75715e">// most requests, fields other than Path and RawQuery will be
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11</span><span style="color:#75715e"></span>        <span style="color:#75715e">// empty. (See RFC 2616, Section 5.1.2)
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13</span><span style="color:#75715e"></span>        <span style="color:#75715e">// For client requests, the URL&#39;s Host specifies the server to
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14</span><span style="color:#75715e"></span>        <span style="color:#75715e">// connect to, while the Request&#39;s Host field optionally
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15</span><span style="color:#75715e"></span>        <span style="color:#75715e">// specifies the Host header value to send in the HTTP
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16</span><span style="color:#75715e"></span>        <span style="color:#75715e">// request.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">URL</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">URL</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19</span>        <span style="color:#75715e">// 〜中略〜
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20</span><span style="color:#75715e"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21</span>        <span style="color:#75715e">// For server requests Host specifies the host on which the
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22</span><span style="color:#75715e"></span>        <span style="color:#75715e">// URL is sought. Per RFC 2616, this is either the value of
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23</span><span style="color:#75715e"></span>        <span style="color:#75715e">// the &#34;Host&#34; header or the host name given in the URL itself.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24</span><span style="color:#75715e"></span>        <span style="color:#75715e">// It may be of the form &#34;host:port&#34;.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26</span><span style="color:#75715e"></span>        <span style="color:#75715e">// For client requests Host optionally overrides the Host
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27</span><span style="color:#75715e"></span>        <span style="color:#75715e">// header to send. If empty, the Request.Write method uses
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28</span><span style="color:#75715e"></span>        <span style="color:#75715e">// the value of URL.Host.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">Host</span> <span style="color:#66d9ef">string</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31</span>        <span style="color:#75715e">// 〜中略〜
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32</span><span style="color:#75715e"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33</span>        <span style="color:#75715e">// RequestURI is the unmodified Request-URI of the
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34</span><span style="color:#75715e"></span>        <span style="color:#75715e">// Request-Line (RFC 2616, Section 5.1) as sent by the client
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">35</span><span style="color:#75715e"></span>        <span style="color:#75715e">// to a server. Usually the URL field should be used instead.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">36</span><span style="color:#75715e"></span>        <span style="color:#75715e">// It is an error to set this field in an HTTP client request.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">37</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">RequestURI</span> <span style="color:#66d9ef">string</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">38</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">39</span>        <span style="color:#75715e">// 〜中略〜
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">40</span><span style="color:#75715e"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">41</span>        <span style="color:#75715e">// TLS allows HTTP servers and other software to record
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">42</span><span style="color:#75715e"></span>        <span style="color:#75715e">// information about the TLS connection on which the request
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">43</span><span style="color:#75715e"></span>        <span style="color:#75715e">// was received. This field is not filled in by ReadRequest.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">44</span><span style="color:#75715e"></span>        <span style="color:#75715e">// The HTTP server in this package sets the field for
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">45</span><span style="color:#75715e"></span>        <span style="color:#75715e">// TLS-enabled connections before invoking a handler;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">46</span><span style="color:#75715e"></span>        <span style="color:#75715e">// otherwise it leaves the field nil.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">47</span><span style="color:#75715e"></span>        <span style="color:#75715e">// This field is ignored by the HTTP client.
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">48</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">TLS</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">tls</span>.<span style="color:#a6e22e">ConnectionState</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">49</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">50</span>        <span style="color:#75715e">// 〜中略〜
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">51</span><span style="color:#75715e"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">52</span>}</code></pre></div>
+
+<p>Requestの中で、この3つが使えそうだ。</p>
+
+<ul>
+<li>URL *url.URL</li>
+<li>Host string</li>
+<li>TLS *tls.ConnectionState</li>
+</ul>
+
+<h3 id="url">URL</h3>
+
+<p>まずはこれが良さそうなので、a.Request.URL.Hostとa.Request.URL.Schemeを取ってみるも、空の文字列が返ってくる。</p>
+
+<p>理由はコメントに書いてあった。最近すこぶる性能が良くなったGoogle翻訳にコメント部分を突っ込んでみる</p>
+
+<blockquote>
+<p>For server requests the URL is parsed from the URI supplied on the Request-Line as stored in RequestURI.</p>
+
+<p>サーバ要求の場合、URLはRequestURIに格納されているRequest-Lineで指定されたURIから解析されます。</p>
+</blockquote>
+
+<p>ということで、RequestURIに格納されている文字列をParseしたものなので、そもそもRequestURIにはホスト名が含まれていなかったので得ることができなかった。</p>
+
+<h3 id="host">Host</h3>
+
+<p>これはホスト名を得ることが出来た。port番号が指定されていればportつきで取得できる。</p>
+
+<h3 id="tls">TLS</h3>
+
+<p>上記でホスト名取得ができたがこちらも見ておく。</p>
+
+<blockquote>
+<p>The HTTP server in this package sets the field for TLS-enabled connections before invoking a handler; otherwise it leaves the field nil.</p>
+
+<p>このパッケージのHTTPサーバーは、ハンドラを呼び出す前にTLS対応接続のフィールドを設定します。 それ以外の場合は、フィールドはnilになります。</p>
+</blockquote>
+
+<p>ほほう。TLSでの接続じゃない場合、nilになるとのこと。ということでここのnilチェックでhttpかhttpsが判別できそう。</p>
+
+<p>ということで、ブログ冒頭のようにホスト名取得（とおまけにhttp/httpsの判別)ができた。</p>
               
             </div>
           </div>
@@ -275,9 +403,9 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small"></span><br/>
                     
-  <a class="tag tag--primary tag--small" href="/tags/golang/">golang</a>
+  <a class="tag tag--primary tag--small" href="https://kamykn.github.io/tags/golang/">golang</a>
 
-  <a class="tag tag--primary tag--small" href="/tags/gorm/">gorm</a>
+  <a class="tag tag--primary tag--small" href="https://kamykn.github.io/tags/revel/">revel</a>
 
                   </div>
                 
@@ -290,7 +418,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/" data-tooltip="Gormでdeleted_atつけてソフトデリートにする">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/" data-tooltip="Revelの親コントローラを作成する">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml"></span>
@@ -298,7 +426,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/" data-tooltip="Gormでdeleted_atつけてソフトデリートにする">
               
                   <span class="hide-xs hide-sm text-small icon-mr"></span>
                   <i class="fa fa-angle-right"></i>
@@ -316,19 +444,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -366,7 +494,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/" data-tooltip="Gormでdeleted_atつけてソフトデリートにする">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/" data-tooltip="Revelの親コントローラを作成する">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml"></span>
@@ -374,7 +502,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/" data-tooltip="Gormでdeleted_atつけてソフトデリートにする">
               
                   <span class="hide-xs hide-sm text-small icon-mr"></span>
                   <i class="fa fa-angle-right"></i>
@@ -392,19 +520,19 @@
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -428,19 +556,19 @@
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2Fpost%2Fgorm%25E3%2581%25A7deleted_at%25E3%2581%25A4%25E3%2581%2591%25E3%2581%25A6%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2583%2587%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2588%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkamykn.github.io%2Fpost%2Fgorm%25E3%2581%25A7deleted_at%25E3%2581%25A4%25E3%2581%2591%25E3%2581%25A6%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2583%2587%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2588%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2F">
           <i class="fa fa-facebook-official"></i><span>%!(EXTRA string=Facebook)</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2Fpost%2Fgorm%25E3%2581%25A7deleted_at%25E3%2581%25A4%25E3%2581%2591%25E3%2581%25A6%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2583%2587%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2588%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fkamykn.github.io%2Fpost%2Fgorm%25E3%2581%25A7deleted_at%25E3%2581%25A4%25E3%2581%2591%25E3%2581%25A6%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2583%2587%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2588%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2F">
           <i class="fa fa-twitter"></i><span>%!(EXTRA string=Twitter)</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2Fpost%2Fgorm%25E3%2581%25A7deleted_at%25E3%2581%25A4%25E3%2581%2591%25E3%2581%25A6%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2583%2587%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2588%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fkamykn.github.io%2Fpost%2Fgorm%25E3%2581%25A7deleted_at%25E3%2581%25A4%25E3%2581%2591%25E3%2581%25A6%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2583%2587%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2588%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2F">
           <i class="fa fa-google-plus"></i><span>%!(EXTRA string=Google&#43;)</span>
         </a>
       </li>
@@ -456,7 +584,7 @@
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="/images/icon/kmszk4_circle_s.png" alt="" />
+      <img id="about-card-picture" src="https://kamykn.github.io/images/icon/kmszk4_circle_s.png" alt="" />
     
     <h4 id="about-card-name">kamykn(かみけん)</h4>
     
@@ -501,7 +629,7 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/post/vimconf2017%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/vimconf2017%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/">
                 <h3 class="media-heading">Vimconf2017行ってきた</h3>
               </a>
               <span class="media-meta">
@@ -520,7 +648,7 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/post/gorm%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%82%AF%E3%82%A8%E3%83%AAsql%E6%96%87%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B/">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/gorm%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%82%AF%E3%82%A8%E3%83%AAsql%E6%96%87%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B/">
                 <h3 class="media-heading">gormで実行されているクエリ(SQL文)を確認する</h3>
               </a>
               <span class="media-meta">
@@ -541,7 +669,7 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/post/gorm%E3%81%A7join%E3%82%92%E4%BD%BF%E3%81%86golang/">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/gorm%E3%81%A7join%E3%82%92%E4%BD%BF%E3%81%86golang/">
                 <h3 class="media-heading">gormでJOINを使う(Golang)</h3>
               </a>
               <span class="media-meta">
@@ -561,7 +689,7 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/post/%E8%BF%94%E3%82%8A%E5%80%A4%E3%81%A7%E5%9E%8B%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8Bduck-typing/">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/%E8%BF%94%E3%82%8A%E5%80%A4%E3%81%A7%E5%9E%8B%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8Bduck-typing/">
                 <h3 class="media-heading">返り値で型指定するDuck Typing</h3>
               </a>
               <span class="media-meta">
@@ -581,7 +709,7 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">
                 <h3 class="media-heading">Revelの親コントローラを作成する</h3>
               </a>
               <span class="media-meta">
@@ -601,7 +729,7 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
                 <h3 class="media-heading">Gormでdeleted_atつけてソフトデリートにする</h3>
               </a>
               <span class="media-meta">
@@ -620,7 +748,7 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
                 <h3 class="media-heading">Gormでdeleted_atつけてソフトデリートにする</h3>
               </a>
               <span class="media-meta">
@@ -652,7 +780,7 @@
     
   
     
-    <div id="cover" style="background-image:url('/images/cover.jpg');"></div>
+    <div id="cover" style="background-image:url('https://kamykn.github.io/images/cover.jpg');"></div>
   
 
 
@@ -664,446 +792,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
-
-
-<script lang="javascript">
-window.onload = updateMinWidth;
-window.onresize = updateMinWidth;
-document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
-function updateMinWidth() {
-  var sidebar = document.getElementById("sidebar");
-  var main = document.getElementById("main");
-  main.style.minWidth = "";
-  var w1 = getComputedStyle(main).getPropertyValue("min-width");
-  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
-  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
-  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
-}
-</script>
-
-<script>
-$(document).ready(function() {
-  hljs.configure({ classPrefix: '', useBR: false });
-  $('pre.code-highlight > code, pre > code').each(function(i, block) {
-    if (!$(this).hasClass('codeblock')) {
-      $(this).addClass('codeblock');
-    }
-    hljs.highlightBlock(block);
-  });
-});
-</script>
-
-
-  
-    
-  
-
-
-
-
-    
-  </body>
-</html>
-
-s="post-footer main-content-wrap">
-            
-              
-                
-                
-                  <div class="post-footer-tags">
-                    <span class="text-color-light text-small"></span><br/>
-                    
-  <a class="tag tag--primary tag--small" href="/tags/golang/">golang</a>
-
-  <a class="tag tag--primary tag--small" href="/tags/revel/">revel</a>
-
-                  </div>
-                
-              
-            
-            <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/" data-tooltip="Revelの親コントローラを作成する">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml"></span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/" data-tooltip="Gormでdeleted_atつけてソフトデリートにする">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr"></span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
-              <i class="fa fa-facebook-official"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-        
-      
-      
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
-    </ul>
-  
-</div>
-
-            
-              
-            
-          </div>
-        </article>
-        <footer id="footer" class="main-content-wrap">
-  <span class="copyrights">
-    &copy; 2018 kamykn(かみけん). 
-  </span>
-</footer>
-
-      </div>
-      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/" data-tooltip="Revelの親コントローラを作成する">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml"></span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/" data-tooltip="Gormでdeleted_atつけてソフトデリートにする">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr"></span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
-              <i class="fa fa-facebook-official"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-        
-      
-      
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
-    </ul>
-  
-</div>
-
-      </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-      <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2Fpost%2Fgorm%25E3%2581%25A7deleted_at%25E3%2581%25A4%25E3%2581%2591%25E3%2581%25A6%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2583%2587%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2588%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2F">
-          <i class="fa fa-facebook-official"></i><span>%!(EXTRA string=Facebook)</span>
-        </a>
-      </li>
-    
-      <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2Fpost%2Fgorm%25E3%2581%25A7deleted_at%25E3%2581%25A4%25E3%2581%2591%25E3%2581%25A6%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2583%2587%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2588%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2F">
-          <i class="fa fa-twitter"></i><span>%!(EXTRA string=Twitter)</span>
-        </a>
-      </li>
-    
-      <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2Fpost%2Fgorm%25E3%2581%25A7deleted_at%25E3%2581%25A4%25E3%2581%2591%25E3%2581%25A6%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2583%2587%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%2588%25E3%2581%25AB%25E3%2581%2599%25E3%2582%258B%2F">
-          <i class="fa fa-google-plus"></i><span>%!(EXTRA string=Google&#43;)</span>
-        </a>
-      </li>
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
-    </div>
-    
-    <div id="about">
-  <div id="about-card">
-    <div id="about-btn-close">
-      <i class="fa fa-remove"></i>
-    </div>
-    
-      <img id="about-card-picture" src="/images/icon/kmszk4_circle_s.png" alt="" />
-    
-    <h4 id="about-card-name">kamykn(かみけん)</h4>
-    
-      <div id="about-card-bio">kamykn(かみけん)の<br />イベント参加や日常のログ</div>
-    
-    
-      <div id="about-card-job">
-        <i class="fa fa-briefcase"></i>
-        <br/>
-        Serverside And Frontend Engineer.
-      </div>
-    
-    
-      <div id="about-card-location">
-        <i class="fa fa-map-marker"></i>
-        <br/>
-        Japan
-      </div>
-    
-  </div>
-</div>
-
-    <div id="algolia-search-modal" class="modal-container">
-  <div class="modal">
-    <div class="modal-header">
-      <span class="close-button"><i class="fa fa-close"></i></span>
-      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
-        <span class="searchby-algolia-text text-color-light text-small">by</span>
-        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
-      </a>
-      <i class="search-icon fa fa-search"></i>
-      <form id="algolia-search-form">
-        <input type="text" id="algolia-search-input" name="search"
-          class="form-control input--large search-input" placeholder="" />
-      </form>
-    </div>
-    <div class="modal-body">
-      <div class="no-result text-color-light text-center"></div>
-      <div class="results">
-        
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/post/vimconf2017%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/">
-                <h3 class="media-heading">Vimconf2017行ってきた</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>※この記事は旧ブログから当ブログに記事を移行しました。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/post/gorm%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%82%AF%E3%82%A8%E3%83%AAsql%E6%96%87%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B/">
-                <h3 class="media-heading">gormで実行されているクエリ(SQL文)を確認する</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2016
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>下記のように実行しているgormの裏側で実行されているクエリが知りたい場合には…</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Where</span>(<span style="color:#e6db74">&#34;id = ?&#34;</span>, <span style="color:#a6e22e">accountID</span>).<span style="color:#a6e22e">Find</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">account</span>)</code></pre></div>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/post/gorm%E3%81%A7join%E3%82%92%E4%BD%BF%E3%81%86golang/">
-                <h3 class="media-heading">gormでJOINを使う(Golang)</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2016
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>今回は、gormで返り値にJoinされる方のテーブルの値は取れているが、Joinする方のテーブルの値が取れていないときのTips。
-結論から言うと、JOINを使う場合にはSelect()を指定することと、変数の型に注意。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/post/%E8%BF%94%E3%82%8A%E5%80%A4%E3%81%A7%E5%9E%8B%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8Bduck-typing/">
-                <h3 class="media-heading">返り値で型指定するDuck Typing</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2016
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>Go言語では様々な形でダックタイピングが可能です。
-今回はGo言語で利用可能な返り値の型指定を利用する例を紹介します。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">
-                <h3 class="media-heading">Revelの親コントローラを作成する</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2016
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>親コントローラ生成について
-親コントローラ（ドキュメントではExtending the Controllerとなっているが）は下記のドキュメントのように作成すると良い。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
-                <h3 class="media-heading">Gormでdeleted_atつけてソフトデリートにする</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2016
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>まずは上手く取れた記述から</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
-                <h3 class="media-heading">Gormでdeleted_atつけてソフトデリートにする</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Dec 12, 2016
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>言語での開発ではモデル周りはgorm使っています。<br />
-ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-      </div>
-    </div>
-    <div class="modal-footer">
-      <p class="results-count text-medium"
-         data-message-zero=""
-         data-message-one=""
-         data-message-other="">
-         7 posts found
-      </p>
-    </div>
-  </div>
-</div>
-    
-  
-    
-    <div id="cover" style="background-image:url('/images/cover.jpg');"></div>
-  
-
-
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
-
-
-<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+<script src="https://kamykn.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
 
 
 <script lang="javascript">
