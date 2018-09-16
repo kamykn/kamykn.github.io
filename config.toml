@@ -55,23 +55,11 @@ pygmentsUseClassic = true
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-home\"></i>"
   url = "/"
 [[menu.main]]
-  weight = 2
-  identifier = "categories"
-  name = "Categories"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-bookmark\"></i>"
-  url = "/categories"
-[[menu.main]]
   weight = 3
   identifier = "tags"
   name = "Tags"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-tags\"></i>"
   url = "/tags"
-[[menu.main]]
-  weight = 4
-  identifier = "archives"
-  name = "Archives"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-archive\"></i>"
-  url = "/archives"
 [[menu.main]]
   weight = 5
   identifier = "about"
@@ -89,7 +77,7 @@ pygmentsUseClassic = true
   weight = 2
   identifier = "Qiita"
   name = "Qiita"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-stack-overflow\"></i>"
+  pre = "<span class=\"sidebar-button-icon\"><img src=\"/images/icon/q.png\"></span>"
   url = "https://qiita.com/kamykn"
 
 [[menu.misc]]
