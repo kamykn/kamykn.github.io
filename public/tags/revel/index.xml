@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Revel on kamykn techlog</title>
-    <link>https://kamykn.github.io/tags/revel/</link>
+    <link>/tags/revel/</link>
     <description>Recent content in Revel on kamykn techlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <lastBuildDate>Mon, 12 Dec 2016 10:35:50 +0900</lastBuildDate>
     
-	<atom:link href="https://kamykn.github.io/tags/revel/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/revel/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Revelの親コントローラを作成する</title>
-      <link>https://kamykn.github.io/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
+      <link>/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
       <pubDate>Mon, 12 Dec 2016 10:35:50 +0900</pubDate>
       
-      <guid>https://kamykn.github.io/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
+      <guid>/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
       <description>&lt;p&gt;親コントローラ生成について
 親コントローラ（ドキュメントではExtending the Controllerとなっているが）は下記のドキュメントのように作成すると良い。&lt;/p&gt;
 
@@ -25,10 +25,10 @@
     
     <item>
       <title>Gormでdeleted_atつけてソフトデリートにする</title>
-      <link>https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</link>
+      <link>/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</link>
       <pubDate>Sun, 11 Dec 2016 12:35:45 +0900</pubDate>
       
-      <guid>https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</guid>
+      <guid>/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</guid>
       <description>&lt;p&gt;まずは上手く取れた記述から&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
