@@ -7,7 +7,7 @@ tags:
 - VimConf
 thumbnailImagePosition: left
 thumbnailImage: /images/post/20171105000423.jpg
-coverImage: /images/post/20171105000423.jpg
+<!-- coverImage: /images/post/20171105000423.jpg -->
 metaAlignment: center
 coverMeta: out
 ---
@@ -15,9 +15,9 @@ coverMeta: out
 
 ※この記事は旧ブログから当ブログに記事を移行しました。
 
-![VimConf2017](/images/post/20171105000423.jpg "VimConf2017")
-
 <!--more-->
+
+![VimConf2017](/images/post/20171105000423.jpg "VimConf2017")
 
 # Vimconf2017行きました！
 
