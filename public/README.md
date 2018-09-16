@@ -1,27 +1,9 @@
-# 環境構築
-## Macの環境構築
-```
-brew install hugo
-ghq get git@github.com:kamykn/kamykn.github.io.git
-```
+# kamykn techblog
+このリポジトリは主に下記のつのブランチで構成している
 
-# 使い方メモ
+- master
+	- GitHub Pages用のmasterブランチ
+- hugo-master
+	- Hugoで静的ファイル構築するためのブランチ
 
-```
-# 確認
-hugo server
-
-# ビルド
-hugo
-
-# 記事作成
-hugo new post/<記事名>.md
-
-# push
-git push origin HEAD # いつもの
-git subtree push --prefix public origin master # subtree の push
-
-# submodule更新 (これ忘れるとhugoコマンドで静的ファイルが作られない)
-git submodule update
-```
-
+静的ファイル構築についてはhugo-masterに書いてある
