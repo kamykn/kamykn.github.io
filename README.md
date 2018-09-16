@@ -25,3 +25,6 @@ git subtree push --prefix public origin master # subtree の push
 git submodule update
 ```
 
+# 構築時のメモ
+README.mdをmasterに追加しないと表示されないので注意。
+
