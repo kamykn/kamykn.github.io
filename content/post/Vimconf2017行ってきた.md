@@ -8,8 +8,8 @@ tags:
 thumbnailImagePosition: left
 thumbnailImage: /images/post/20171105000423.jpg
 <!-- coverImage: /images/post/20171105000423.jpg -->
-metaAlignment: center
-coverMeta: out
+<!-- metaAlignment: center -->
+<!-- coverMeta: out -->
 ---
 
 
