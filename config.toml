@@ -15,6 +15,7 @@
 baseURL = "https://kamykn.github.io/"
 languageCode = "ja-jp"
 defaultContentLanguage = "ja-jp"
+publishDir = "public"
 title = "kamykn techlog"
 theme = "hugo-tranquilpeak-theme"
 disqusShortname = "hugo-tranquilpeak-theme"
