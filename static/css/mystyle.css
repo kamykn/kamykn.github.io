@@ -3,8 +3,15 @@
 	height: 2rem;
 }
 
+#sidebar[data-behavior="1"] .sidebar-profile .sidebar-profile-bio,
+#sidebar[data-behavior="1"] .sidebar-profile .sidebar-profile-job,
+#sidebar[data-behavior="1"] .sidebar-profile .sidebar-profile-location {
+	color: #FFF;
+}
+
 #sidebar ul.sidebar-buttons li.sidebar-button .sidebar-button-link {
 	color: #FFF;
+	font-weight: bold;
 }
 
 #sidebar .sidebar-profile .sidebar-profile-name {
