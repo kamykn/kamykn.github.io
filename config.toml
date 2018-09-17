@@ -33,7 +33,7 @@ pygmentsUseClassic = true
   archive = "archives"
 
 [author]
-  name = "kamykn(かみけん)"
+  name = "kamykn"
   bio = "kamykn(かみけん)の<br />イベント参加や日常のログ"
   job = "Serverside And Frontend Engineer."
   location = "Japan"
@@ -41,7 +41,7 @@ pygmentsUseClassic = true
   # gravatarEmail = "thibaud.lepretre@gmail.com"
   # Your profile picture
   # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-  picture = "/images/icon/kmszk4_circle_s.png?v=4"
+  picture = "/images/icon/kmszk4_circle_s_wbg.png?v=4"
   # Your Twitter username without the @. E.g : thibaudlepretre
   twitter = "_kamykn_"
   # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
