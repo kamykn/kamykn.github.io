@@ -88,8 +88,29 @@ h1 {
 	color: #b59c6e;
 }
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width:1279px) {
 	.post .post-header .post-title {
 		font-size: 3.3rem;
 	}
+
+	#bottom-bar[data-behavior="1"],
+	#bottom-bar[data-behavior="2"] {
+		min-width: auto;
+		width: calc(100% - 400px - 15px * 2);
+		left: 400px;
+	}
 }
+
+@media only screen and (max-width: 1279px) and (min-width: 1024px) {
+	.post .post-header .post-title {
+		font-size: 3.3rem;
+	}
+
+	#bottom-bar[data-behavior="1"],
+	#bottom-bar[data-behavior="2"] {
+		min-width: auto;
+		width: calc(100% - 400px - 15px * 2);
+		left: 400px;
+	}
+}
+
