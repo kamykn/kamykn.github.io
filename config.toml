@@ -92,7 +92,7 @@ pygmentsUseClassic = true
   # You must use date format used by Go Time package https://golang.org/pkg/time/
   # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
   # Default format is: January 2, 2006 
-  dateFormat = "2006-01-02 15:04:05"
+  dateFormat = "Mon, Jan 02, 2006"
 
   # Global keywords configuration. Following keywords will be add to every pages
   # keywords = ["development", "next-gen"]
