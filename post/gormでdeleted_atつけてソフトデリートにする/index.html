@@ -8,12 +8,14 @@
 <meta name="generator" content="Hugo 0.48 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="kamykn">
 <meta name="keywords" content="">
-<meta name="description" content="まずは上手く取れた記述から
+<meta name="description" content="言語での開発ではモデル周りはgorm使っています。
+ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。
 
 ">
 
 
-<meta property="og:description" content="まずは上手く取れた記述から
+<meta property="og:description" content="言語での開発ではモデル周りはgorm使っています。
+ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。
 
 ">
 <meta property="og:type" content="article">
@@ -22,19 +24,21 @@
 <meta property="og:url" content="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
 <meta property="twitter:url" content="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
 <meta property="og:site_name" content="kamykn techlog">
-<meta property="og:description" content="まずは上手く取れた記述から
+<meta property="og:description" content="言語での開発ではモデル周りはgorm使っています。
+ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。
 
 ">
-<meta name="twitter:description" content="まずは上手く取れた記述から
+<meta name="twitter:description" content="言語での開発ではモデル周りはgorm使っています。
+ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。
 
 ">
 <meta property="og:locale" content="ja-jp">
 
   
-    <meta property="article:published_time" content="2016-12-11T12:35:45">
+    <meta property="article:published_time" content="2016-12-11T00:05:26">
   
   
-    <meta property="article:modified_time" content="2016-12-11T12:35:45">
+    <meta property="article:modified_time" content="2016-12-11T00:05:26">
   
   
   
@@ -42,7 +46,7 @@
     
       <meta property="article:tag" content="golang">
     
-      <meta property="article:tag" content="revel">
+      <meta property="article:tag" content="gorm">
     
   
 
@@ -224,7 +228,7 @@
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2016-12-11T12:35:45&#43;09:00">
+      <time itemprop="datePublished" datetime="2016-12-11T00:05:26&#43;09:00">
         
   
   
@@ -242,161 +246,29 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>まずは上手く取れた記述から</p>
+              <p>言語での開発ではモデル周りはgorm使っています。<br />
+ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。</p>
 
 <p></p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1</span><span style="color:#f92672">package</span> <span style="color:#a6e22e">controllers</span>
+<h1 id="以下のように記述するとok">以下のように記述するとOK</h1>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1</span><span style="color:#f92672">package</span> <span style="color:#a6e22e">models</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3</span><span style="color:#f92672">import</span> (
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4</span>    <span style="color:#e6db74">&#34;github.com/revel/revel&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4</span>    <span style="color:#e6db74">&#34;time&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5</span>	)
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7</span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Mycontroller</span> <span style="color:#66d9ef">struct</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8</span>    <span style="color:#f92672">*</span><span style="color:#a6e22e">revel</span>.<span style="color:#a6e22e">Controller</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12</span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">m</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Mycontroller</span>) <span style="color:#a6e22e">Index</span>() <span style="color:#a6e22e">revel</span>.<span style="color:#a6e22e">Result</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13</span>    <span style="color:#75715e">// redirectURLの取得
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">requestedHost</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">Request</span>.<span style="color:#a6e22e">Host</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16</span>    <span style="color:#a6e22e">requestedScheme</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;http&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17</span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">Request</span>.<span style="color:#a6e22e">TLS</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18</span>        <span style="color:#a6e22e">requestedScheme</span> = <span style="color:#e6db74">&#34;https&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21</span>    <span style="color:#75715e">// ホスト名
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">revel</span>.<span style="color:#a6e22e">TRACE</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">requestedHost</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24</span>    <span style="color:#75715e">// おまけにスキームも判断してみる（httpかhttpsか）
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">revel</span>.<span style="color:#a6e22e">TRACE</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">requestedScheme</span>);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26</span>}</code></pre></div>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7</span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Table</span> <span style="color:#66d9ef">struct</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8</span>	<span style="color:#a6e22e">ID</span>      <span style="color:#66d9ef">int</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9</span>	<span style="color:#a6e22e">CreatedAt</span>       <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Time</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10</span>	<span style="color:#a6e22e">UpdatedAt</span>       <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Time</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11</span>	<span style="color:#a6e22e">DeletedAt</span>       <span style="color:#f92672">*</span><span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Time</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12</span>}</code></pre></div>
 
-<h1 id="これで取れる理由">これで取れる理由</h1>
+<p>DeletedAtだけ*time.Timeになることに注意。</p>
 
-<p>Controllerが継承している構造体を見ていくと、</p>
-
-<p>[<a href="https://github.com/revel/revel/blob/master/controller.go:embed:cite">https://github.com/revel/revel/blob/master/controller.go:embed:cite</a>]</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1</span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Controller</span> <span style="color:#66d9ef">struct</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2</span>	<span style="color:#a6e22e">Name</span>          <span style="color:#66d9ef">string</span>          <span style="color:#75715e">// The controller name, e.g. &#34;Application&#34;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Type</span>          <span style="color:#f92672">*</span><span style="color:#a6e22e">ControllerType</span> <span style="color:#75715e">// A description of the controller type.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">MethodName</span>    <span style="color:#66d9ef">string</span>          <span style="color:#75715e">// The method name, e.g. &#34;Index&#34;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">MethodType</span>    <span style="color:#f92672">*</span><span style="color:#a6e22e">MethodType</span>     <span style="color:#75715e">// A description of the invoked action type.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">AppController</span> <span style="color:#66d9ef">interface</span>{}     <span style="color:#75715e">// The controller that was instantiated.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Action</span>        <span style="color:#66d9ef">string</span>          <span style="color:#75715e">// The fully qualified action name, e.g. &#34;App.Index&#34;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9</span>	<span style="color:#a6e22e">Request</span>  <span style="color:#f92672">*</span><span style="color:#a6e22e">Request</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10</span>	<span style="color:#a6e22e">Response</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Response</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11</span>	<span style="color:#a6e22e">Result</span>   <span style="color:#a6e22e">Result</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13</span>	<span style="color:#a6e22e">Flash</span>      <span style="color:#a6e22e">Flash</span>                  <span style="color:#75715e">// User cookie, cleared after 1 request.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Session</span>    <span style="color:#a6e22e">Session</span>                <span style="color:#75715e">// Session, stored in cookie, signed.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Params</span>     <span style="color:#f92672">*</span><span style="color:#a6e22e">Params</span>                <span style="color:#75715e">// Parameters from URL and form (including multipart).
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Args</span>       <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">interface</span>{} <span style="color:#75715e">// Per-request scratch space.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">RenderArgs</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">interface</span>{} <span style="color:#75715e">// Args passed to the template.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">Validation</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Validation</span>            <span style="color:#75715e">// Data validation helpers
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19</span><span style="color:#75715e"></span>}</code></pre></div>
-
-<p>Requestを継承している事がわかる。</p>
-
-<p>Requestをもう少し見てみよう。</p>
-
-<p>[<a href="https://golang.org/pkg/net/http/#Request:title">https://golang.org/pkg/net/http/#Request:title</a>]</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1</span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Request</span> <span style="color:#66d9ef">struct</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3</span>        <span style="color:#75715e">// 〜中略〜
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5</span>        <span style="color:#75715e">// URL specifies either the URI being requested (for server
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6</span><span style="color:#75715e"></span>        <span style="color:#75715e">// requests) or the URL to access (for client requests).
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8</span><span style="color:#75715e"></span>        <span style="color:#75715e">// For server requests the URL is parsed from the URI
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9</span><span style="color:#75715e"></span>        <span style="color:#75715e">// supplied on the Request-Line as stored in RequestURI.  For
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10</span><span style="color:#75715e"></span>        <span style="color:#75715e">// most requests, fields other than Path and RawQuery will be
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11</span><span style="color:#75715e"></span>        <span style="color:#75715e">// empty. (See RFC 2616, Section 5.1.2)
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13</span><span style="color:#75715e"></span>        <span style="color:#75715e">// For client requests, the URL&#39;s Host specifies the server to
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14</span><span style="color:#75715e"></span>        <span style="color:#75715e">// connect to, while the Request&#39;s Host field optionally
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15</span><span style="color:#75715e"></span>        <span style="color:#75715e">// specifies the Host header value to send in the HTTP
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16</span><span style="color:#75715e"></span>        <span style="color:#75715e">// request.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">URL</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">URL</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19</span>        <span style="color:#75715e">// 〜中略〜
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21</span>        <span style="color:#75715e">// For server requests Host specifies the host on which the
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22</span><span style="color:#75715e"></span>        <span style="color:#75715e">// URL is sought. Per RFC 2616, this is either the value of
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23</span><span style="color:#75715e"></span>        <span style="color:#75715e">// the &#34;Host&#34; header or the host name given in the URL itself.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">24</span><span style="color:#75715e"></span>        <span style="color:#75715e">// It may be of the form &#34;host:port&#34;.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">25</span><span style="color:#75715e"></span>        <span style="color:#75715e">//
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">26</span><span style="color:#75715e"></span>        <span style="color:#75715e">// For client requests Host optionally overrides the Host
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">27</span><span style="color:#75715e"></span>        <span style="color:#75715e">// header to send. If empty, the Request.Write method uses
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">28</span><span style="color:#75715e"></span>        <span style="color:#75715e">// the value of URL.Host.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">29</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">Host</span> <span style="color:#66d9ef">string</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">30</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">31</span>        <span style="color:#75715e">// 〜中略〜
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">32</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">33</span>        <span style="color:#75715e">// RequestURI is the unmodified Request-URI of the
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">34</span><span style="color:#75715e"></span>        <span style="color:#75715e">// Request-Line (RFC 2616, Section 5.1) as sent by the client
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">35</span><span style="color:#75715e"></span>        <span style="color:#75715e">// to a server. Usually the URL field should be used instead.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">36</span><span style="color:#75715e"></span>        <span style="color:#75715e">// It is an error to set this field in an HTTP client request.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">37</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">RequestURI</span> <span style="color:#66d9ef">string</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">38</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">39</span>        <span style="color:#75715e">// 〜中略〜
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">40</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">41</span>        <span style="color:#75715e">// TLS allows HTTP servers and other software to record
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">42</span><span style="color:#75715e"></span>        <span style="color:#75715e">// information about the TLS connection on which the request
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">43</span><span style="color:#75715e"></span>        <span style="color:#75715e">// was received. This field is not filled in by ReadRequest.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">44</span><span style="color:#75715e"></span>        <span style="color:#75715e">// The HTTP server in this package sets the field for
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">45</span><span style="color:#75715e"></span>        <span style="color:#75715e">// TLS-enabled connections before invoking a handler;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">46</span><span style="color:#75715e"></span>        <span style="color:#75715e">// otherwise it leaves the field nil.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">47</span><span style="color:#75715e"></span>        <span style="color:#75715e">// This field is ignored by the HTTP client.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">48</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">TLS</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">tls</span>.<span style="color:#a6e22e">ConnectionState</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">49</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">50</span>        <span style="color:#75715e">// 〜中略〜
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">51</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">52</span>}</code></pre></div>
-
-<p>Requestの中で、この3つが使えそうだ。</p>
-
-<ul>
-<li>URL *url.URL</li>
-<li>Host string</li>
-<li>TLS *tls.ConnectionState</li>
-</ul>
-
-<h3 id="url">URL</h3>
-
-<p>まずはこれが良さそうなので、a.Request.URL.Hostとa.Request.URL.Schemeを取ってみるも、空の文字列が返ってくる。</p>
-
-<p>理由はコメントに書いてあった。最近すこぶる性能が良くなったGoogle翻訳にコメント部分を突っ込んでみる</p>
-
-<blockquote>
-<p>For server requests the URL is parsed from the URI supplied on the Request-Line as stored in RequestURI.</p>
-
-<p>サーバ要求の場合、URLはRequestURIに格納されているRequest-Lineで指定されたURIから解析されます。</p>
-</blockquote>
-
-<p>ということで、RequestURIに格納されている文字列をParseしたものなので、そもそもRequestURIにはホスト名が含まれていなかったので得ることができなかった。</p>
-
-<h3 id="host">Host</h3>
-
-<p>これはホスト名を得ることが出来た。port番号が指定されていればportつきで取得できる。</p>
-
-<h3 id="tls">TLS</h3>
-
-<p>上記でホスト名取得ができたがこちらも見ておく。</p>
-
-<blockquote>
-<p>The HTTP server in this package sets the field for TLS-enabled connections before invoking a handler; otherwise it leaves the field nil.</p>
-
-<p>このパッケージのHTTPサーバーは、ハンドラを呼び出す前にTLS対応接続のフィールドを設定します。 それ以外の場合は、フィールドはnilになります。</p>
-</blockquote>
-
-<p>ほほう。TLSでの接続じゃない場合、nilになるとのこと。ということでここのnilチェックでhttpかhttpsが判別できそう。</p>
-
-<p>ということで、ブログ冒頭のようにホスト名取得（とおまけにhttp/httpsの判別)ができた。</p>
+<p>デフォルトでカラムにnull以外が入っているとgormのソフトデリート的には削除済み扱いになってしまうみたいです。</p>
               
             </div>
           </div>
@@ -410,7 +282,7 @@
                     
   <a class="tag tag--primary tag--small" href="https://kamykn.github.io/tags/golang/">golang</a>
 
-  <a class="tag tag--primary tag--small" href="https://kamykn.github.io/tags/revel/">revel</a>
+  <a class="tag tag--primary tag--small" href="https://kamykn.github.io/tags/gorm/">gorm</a>
 
                   </div>
                 
@@ -423,7 +295,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/" data-tooltip="Revelの親コントローラを作成する">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/" data-tooltip="Gormでdeleted_atつけてソフトデリートにする">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml"></span>
@@ -431,7 +303,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/" data-tooltip="Gormでdeleted_atつけてソフトデリートにする">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr"></span>
                   <i class="fa fa-angle-right"></i>
@@ -493,7 +365,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/" data-tooltip="Revelの親コントローラを作成する">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/" data-tooltip="Gormでdeleted_atつけてソフトデリートにする">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml"></span>
@@ -501,7 +373,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/" data-tooltip="Gormでdeleted_atつけてソフトデリートにする">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr"></span>
                   <i class="fa fa-angle-right"></i>
@@ -622,8 +494,27 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://kamykn.github.io/post/googlecloudnext18-19%E6%97%A5%E5%9F%BA%E8%AA%BF%E8%AC%9B%E6%BC%94%E3%81%AE%E7%89%B9%E3%81%AB%E5%BE%8C%E5%8D%8A/">
-                <h3 class="media-heading">GoogleCloudNext&#39;18 19日基調講演(の特に後半)</h3>
+              <a class="link-unstyled" href="https://kamykn.github.io/post/googlecloudnext18-day1-iot%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%82%A8%E3%83%83%E3%82%B8%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%81%A7%E3%81%AE%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A/">
+                <h3 class="media-heading">GoogleCloudNext18 Day1: IoTを使ったエッジデバイスでの意思決定</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>IoTを使ったエッジデバイスでの意思決定についてのメモを残していきます。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/googlecloudnext18-day1%E5%9F%BA%E8%AA%BF%E8%AC%9B%E6%BC%94%E3%81%AE%E7%89%B9%E3%81%AB%E5%BE%8C%E5%8D%8A/">
+                <h3 class="media-heading">GoogleCloudNext&#39;18 Day1:基調講演(の特に後半)</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
@@ -785,7 +676,7 @@
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         8 posts found
+         9 posts found
       </p>
     </div>
   </div>
