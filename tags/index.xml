@@ -39,6 +39,24 @@
     </item>
     
     <item>
+      <title>Tag1</title>
+      <link>https://kamykn.github.io/tags/tag1/</link>
+      <pubDate>Wed, 19 Sep 2018 14:39:49 +0900</pubDate>
+      
+      <guid>https://kamykn.github.io/tags/tag1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tag2</title>
+      <link>https://kamykn.github.io/tags/tag2/</link>
+      <pubDate>Wed, 19 Sep 2018 14:39:49 +0900</pubDate>
+      
+      <guid>https://kamykn.github.io/tags/tag2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Vim</title>
       <link>https://kamykn.github.io/tags/vim/</link>
       <pubDate>Sat, 04 Nov 2017 23:56:49 +0900</pubDate>
