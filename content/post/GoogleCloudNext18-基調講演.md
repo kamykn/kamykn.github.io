@@ -1,15 +1,11 @@
 ---
 title: "GoogleCloudNext18 基調講演"
 date: 2018-09-19T14:39:49+09:00
-categories:
-- category
-- subcategory
 tags:
-- tag1
-- tag2
+- GoogleCloudNext'18
 keywords:
 - tech
-#thumbnailImage: //example.com/image.jpg
+- GoogleCloudNext'18
 ---
 
 基調講演で素晴らしいと思ったものをいくつかまとめました  
@@ -25,9 +21,9 @@ keywords:
   - AutoML Vision
     - 画像の機械学習
 - AutoML Natural Language
-  - 自然言語のマシンラーニング
+  - 自然言語の機械学習
 - AutoML Translation
-  - マシンラーニングを使った翻訳プロダクト
+  - 機械学習を使った翻訳プロダクト
 
 ## AutoML Translation デモ
 ### 『ドライバ』: 文脈によって違う
@@ -100,12 +96,12 @@ keywords:
         - アプリの利用者の可視化
         - パーソナライズ
         - CXプラットフォームとしてのサービス
-        - 誰がいま来ていて何をしているかを知らずにサービス提供するの？ to Everyone
+        - (誰が今、サイトに来ていて何をしているかを知らずにサービス提供するの？ と言いたそうに感じた)
         - カスタマーサポートにも使える
         - マーケティングに使える
     - 選定の理由
         - 多様性
-        - 秒間2,3万イベント
+        - 秒間2〜3万イベント
         - リアルタイム性
         - BigQuery
         - やるべきことにフォーカスできた

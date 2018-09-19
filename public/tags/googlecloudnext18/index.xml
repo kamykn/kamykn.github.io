@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Googlecloudnext18 on kamykn techlog</title>
+    <link>https://kamykn.github.io/tags/googlecloudnext18/</link>
+    <description>Recent content in Googlecloudnext18 on kamykn techlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 19 Sep 2018 14:39:49 +0900</lastBuildDate>
+    
+	<atom:link href="https://kamykn.github.io/tags/googlecloudnext18/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GoogleCloudNext18 基調講演</title>
+      <link>https://kamykn.github.io/post/googlecloudnext18-%E5%9F%BA%E8%AA%BF%E8%AC%9B%E6%BC%94/</link>
+      <pubDate>Wed, 19 Sep 2018 14:39:49 +0900</pubDate>
+      
+      <guid>https://kamykn.github.io/post/googlecloudnext18-%E5%9F%BA%E8%AA%BF%E8%AC%9B%E6%BC%94/</guid>
+      <description>&lt;p&gt;基調講演で素晴らしいと思ったものをいくつかまとめました&lt;br /&gt;
+主に機械学習の利用例多めかもしれません。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
