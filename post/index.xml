@@ -17,7 +17,8 @@
       <pubDate>Wed, 19 Sep 2018 21:46:02 +0900</pubDate>
       
       <guid>https://kamykn.github.io/post/googlecloudnext18-day1-iot%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%82%A8%E3%83%83%E3%82%B8%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%81%A7%E3%81%AE%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A/</guid>
-      <description>&lt;p&gt;IoTを使ったエッジデバイスでの意思決定についてのメモを残していきます。&lt;/p&gt;
+      <description>&lt;p&gt;IoTを使ったエッジデバイスでの意思決定についてのメモを残していきます。&lt;br /&gt;
+なお、私は機械学習に関しては経験が無いので自分の理解できた範囲でまとめています。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
