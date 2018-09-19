@@ -21,6 +21,9 @@ hugo new post/<記事名>.md
 git push origin HEAD # いつもの
 git subtree push --prefix public origin master # subtree の push
 
+# 初めてcloneした環境では必要
+git submodule init
+
 # submodule更新 (これ忘れるとhugoコマンドで静的ファイルが作られない)
 git submodule update
 ```
