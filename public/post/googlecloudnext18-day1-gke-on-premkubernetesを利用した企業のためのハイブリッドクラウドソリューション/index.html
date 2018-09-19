@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.48 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="kamykn">
+<meta name="keywords" content="GoogleCloudNext&#39;18">
+<meta name="description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。
+オンプレでGKEだから移行の話かと思ってたら全くそうではありませんでした。
+タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。
+オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。
+
+">
+
+
+<meta property="og:description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。
+オンプレでGKEだから移行の話かと思ってたら全くそうではありませんでした。
+タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。
+オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。
+
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GoogleCloudNext18 Day1: GKE On-Prem、kubernetesを利用した企業のためのハイブリッドクラウドソリューション">
+<meta name="twitter:title" content="GoogleCloudNext18 Day1: GKE On-Prem、kubernetesを利用した企業のためのハイブリッドクラウドソリューション">
+<meta property="og:url" content="https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+<meta property="twitter:url" content="https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+<meta property="og:site_name" content="kamykn techlog">
+<meta property="og:description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。
+オンプレでGKEだから移行の話かと思ってたら全くそうではありませんでした。
+タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。
+オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。
+
+">
+<meta name="twitter:description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。
+オンプレでGKEだから移行の話かと思ってたら全くそうではありませんでした。
+タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。
+オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。
+
+">
+<meta property="og:locale" content="ja-jp">
+
+  
+    <meta property="article:published_time" content="2018-09-20T00:43:20">
+  
+  
+    <meta property="article:modified_time" content="2018-09-20T00:43:20">
+  
+  
+  
+  
+    
+      <meta property="article:tag" content="GoogleCloudNext&#39;18">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@_kamykn_">
+
+
+  <meta name="twitter:creator" content="@_kamykn_">
+
+
+
+
+
+
+  <meta property="og:image" content="https://kamykn.github.io/images/post/2018-09-19/03-1.jpg">
+  <meta property="twitter:image" content="https://kamykn.github.io/images/post/2018-09-19/03-1.jpg">
+
+
+
+
+
+  <meta property="og:image" content="https://kamykn.github.io/images/icon/kamykn.png">
+  <meta property="twitter:image" content="https://kamykn.github.io/images/icon/kamykn.png">
+
+
+    <title>GoogleCloudNext18 Day1: GKE On-Prem、kubernetesを利用した企業のためのハイブリッドクラウドソリューション</title>
+
+    <link rel="icon" href="https://kamykn.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://kamykn.github.io/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://kamykn.github.io/css/mystyle.css">
+      
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://kamykn.github.io/">kamykn techlog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://kamykn.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://kamykn.github.io/images/icon/kamykn.png" alt="" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://kamykn.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://kamykn.github.io/images/icon/kamykn.png" alt="" />
+        </a>
+        <h4 class="sidebar-profile-name">kamykn</h4>
+        
+          <h5 class="sidebar-profile-bio">kamykn(かみけん)の<br />イベント参加や日常のログ</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kamykn.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kamykn.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kamykn.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About Me</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kamykn" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://qiita.com/kamykn" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon sidebar-custom-button-icon"><img src="https://kamykn.github.io/images/icon/q.png"></i>
+      
+      <span class="sidebar-button-desc">Qiita</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kamykn.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      GoogleCloudNext18 Day1: GKE On-Prem、kubernetesを利用した企業のためのハイブリッドクラウドソリューション
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-09-20T00:43:20&#43;09:00">
+        
+  
+  
+  
+  
+    Thu, Sep 20, 2018
+  
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Google Cloud Nextで個人的に一番ワクワクした発表でした。
+オンプレでGKEだから移行の話かと思ってたら全くそうではありませんでした。<br />
+タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。<br />
+オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。</p>
+
+<p></p>
+
+<h1 id="gke-on-prem-kubernetesを利用した企業のためのハイブリッドクラウドソリューション">GKE On-Prem、kubernetesを利用した企業のためのハイブリッドクラウドソリューション</h1>
+
+<h2 id="スピーカー">スピーカー</h2>
+
+<ul>
+<li>ダスティン カークランド
+
+<ul>
+<li>GoogleCloud プロダクトマネージャー</li>
+</ul></li>
+</ul>
+
+<h1 id="注意">注意</h1>
+
+<p>⚠将来の見通し含めてこれからの話をする箇所があるよ⚠
+(確定事項ではないということ)</p>
+
+<h2 id="大変革をもたらす">大変革をもたらす</h2>
+
+<p>On-Premに対してGKE提供する<br />
+既存のデータセンタに対して提供する<br />
+すなわち、既存のデータセンターに対して革新的であるだろう</p>
+
+<h2 id="gke-on-prem">GKE On-Prem</h2>
+
+<p>クラウドのGKEのようにOn-Prem環境のコンテナをいじる</p>
+
+<p>Googleのすでに提供しているものと同様の方法でクラスタを実行<br />
+GKE及びGKE On-Premでクラスタのインストール<br />
+GCP以外にも使えるようになります。</p>
+
+<h2 id="gke-on-premがもたらす-ハイブリッドクラウド">GKE On-Premがもたらす『ハイブリッドクラウド』</h2>
+
+<p>その先は東京とは限らないロンドンだったりする<br />
+Co-Lo(Co-Location)<br />
+<img src="https://kamykn.github.io/images/post/2018-09-19/03-5.jpg" alt="Co-Lo" title="Co-Lo" /></p>
+
+<h1 id="ニーズの有りそうな使い方">ニーズの有りそうな使い方</h1>
+
+<h2 id="オンラインゲームの場合">オンラインゲームの場合</h2>
+
+<p>近くのGKE On-Premに繋がせて、そこからCloudに接続させる<br />
+太いOn-Prem - Cloud間の通信も必要(その用意がGoogle側にはある)<br />
+<img src="https://kamykn.github.io/images/post/2018-09-19/03-4.jpg" alt="オンラインゲームの場合" title="オンラインゲームの場合" /></p>
+
+<h2 id="リテール-エッジ-クラウド-コンピューティング">リテール エッジ クラウド コンピューティング</h2>
+
+<p>エッジ / IoTから 身近にあるOn-Premに通信する</p>
+
+<h2 id="データ来歴">データ来歴</h2>
+
+<ul>
+<li>法的義務</li>
+<li>コンプライアンス要件</li>
+<li>責任制限</li>
+</ul>
+
+<p>のあるものをOn-Prem</p>
+
+<p>豊富なセキュリティ機能セットをCloudへ</p>
+
+<h2 id="リフトアンドシフト-乗り換え">リフトアンドシフト(乗り換え)</h2>
+
+<p>レガシーソフトウェア<br />
+独自のソフトウェア<br />
+それが壊れていない(←きっかけが無いことを言っていると思う)<br />
+<img src="https://kamykn.github.io/images/post/2018-09-19/03-3.jpg" alt="使い方" title="使い方" /></p>
+
+<h2 id="開発-テスト-ci-cd-prod">開発 -&gt; テスト -&gt; CI -&gt; CD -&gt; Prod</h2>
+
+<p>On-Prem<br />
+自由な開発<br />
+そのハードウェアに特化できる<br />
+<img src="https://kamykn.github.io/images/post/2018-09-19/03-4.jpg" alt="使い方" title="使い方" /></p>
+
+<h1 id="googleのプラネットスケールのクラウドセキュアデータが生産性を押し上げる">Googleのプラネットスケールのクラウドセキュアデータが生産性を押し上げる</h1>
+
+<p>企業のデータセンターとテクノロジーが価値を届ける<br />
+バイナリのコードを皆さんのデータセンタに届けます</p>
+
+<h1 id="google-cloudがデータセンターのエクステンションそして加速装置となり得る">Google Cloudがデータセンターのエクステンションそして加速装置となり得る</h1>
+
+<h1 id="デモ">デモ</h1>
+
+<p>On-Premでいけるということは&hellip;<br />
+ラップトップでも行ける！！！！</p>
+
+<p>デモ内容</p>
+
+<ul>
+<li>外部のクラスタ(ラップトップ=ノートPC)を登録する<br /></li>
+<li>ローカルでCLIから起動<br /></li>
+<li>管理画面から&hellip;YAMLのマニフェストをダウンロードしてapply<br /></li>
+<li>Googleへの接続も勝手にやってくれるGKEConnectAgent<br /></li>
+<li>Credential登録<br /></li>
+<li>登録完了<br /></li>
+<li>クラスタをクリック<br /></li>
+<li>管理画面からいろいろ見れる<br /></li>
+<li>Workload見れる止めれる<br /></li>
+<li>小さいKubernatesがラップトップで動いてる<br /></li>
+</ul>
+
+<h1 id="質問コーナー">質問コーナー</h1>
+
+<h2 id="使うのに特殊な機器は必要">使うのに特殊な機器は必要？</h2>
+
+<p>VM Ware上での提供を考えてるよ v3<br />
+いいのがあればVM Ware以外にも教えて</p>
+
+<h2 id="ストレージはどうなる">ストレージはどうなる？</h2>
+
+<p>答えると長くなる<br />
+短めにいうと</p>
+
+<ul>
+<li>ステートレス/フルはどちらも用意している<br /></li>
+<li>フルはできるだけ長く保たなければならない<br /></li>
+<li>暗号化も提供<br /></li>
+</ul>
+
+<h2 id="料金は">料金は？</h2>
+
+<p>プライスモデルはまだ教えないよ</p>
+
+<h1 id="kamyknの考察">kamyknの考察</h1>
+
+<p>これってOn-Premだけの話ではなくGKE on AWSとかもできるし、下手したらIoT端末とかそんなところまで手が届きそうですね。<br />
+Googleがどうやってサービスをデザインするのかすっっっっっごくワクワクしますね！！<br />
+というか、こういうの発表してたら他社は真似したりしないのかな…</p>
+
+<p><img src="https://kamykn.github.io/images/post/2018-09-19/03-7.jpg" alt="東京タワー" title="東京タワー" />
+帰る頃にはすっかり真っ暗闇になってました</p>
+
+<h1 id="超余談">超余談</h1>
+
+<p>nginx -&gt; エンジネックスって言っててかっこいい</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small"></span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://kamykn.github.io/tags/googlecloudnext18/">GoogleCloudNext&#39;18</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/googlecloudnext18-day1-iot%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%82%A8%E3%83%83%E3%82%B8%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%81%A7%E3%81%AE%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A/" data-tooltip="GoogleCloudNext18 Day1: IoTを使ったエッジデバイスでの意思決定">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+    </ul>
+  
+</div>
+
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 kamykn. 
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/googlecloudnext18-day1-iot%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%82%A8%E3%83%83%E3%82%B8%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%81%A7%E3%81%AE%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A/" data-tooltip="GoogleCloudNext18 Day1: IoTを使ったエッジデバイスでの意思決定">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+    </ul>
+  
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkamykn.github.io%2Fpost%2Fgooglecloudnext18-day1-gke-on-premkubernetes%25E3%2582%2592%25E5%2588%25A9%25E7%2594%25A8%25E3%2581%2597%25E3%2581%259F%25E4%25BC%2581%25E6%25A5%25AD%25E3%2581%25AE%25E3%2581%259F%25E3%2582%2581%25E3%2581%25AE%25E3%2583%258F%25E3%2582%25A4%25E3%2583%2596%25E3%2583%25AA%25E3%2583%2583%25E3%2583%2589%25E3%2582%25AF%25E3%2583%25A9%25E3%2582%25A6%25E3%2583%2589%25E3%2582%25BD%25E3%2583%25AA%25E3%2583%25A5%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%2F">
+          <i class="fa fa-facebook-official"></i><span>%!(EXTRA string=Facebook)</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fkamykn.github.io%2Fpost%2Fgooglecloudnext18-day1-gke-on-premkubernetes%25E3%2582%2592%25E5%2588%25A9%25E7%2594%25A8%25E3%2581%2597%25E3%2581%259F%25E4%25BC%2581%25E6%25A5%25AD%25E3%2581%25AE%25E3%2581%259F%25E3%2582%2581%25E3%2581%25AE%25E3%2583%258F%25E3%2582%25A4%25E3%2583%2596%25E3%2583%25AA%25E3%2583%2583%25E3%2583%2589%25E3%2582%25AF%25E3%2583%25A9%25E3%2582%25A6%25E3%2583%2589%25E3%2582%25BD%25E3%2583%25AA%25E3%2583%25A5%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%2F">
+          <i class="fa fa-twitter"></i><span>%!(EXTRA string=Twitter)</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fkamykn.github.io%2Fpost%2Fgooglecloudnext18-day1-gke-on-premkubernetes%25E3%2582%2592%25E5%2588%25A9%25E7%2594%25A8%25E3%2581%2597%25E3%2581%259F%25E4%25BC%2581%25E6%25A5%25AD%25E3%2581%25AE%25E3%2581%259F%25E3%2582%2581%25E3%2581%25AE%25E3%2583%258F%25E3%2582%25A4%25E3%2583%2596%25E3%2583%25AA%25E3%2583%2583%25E3%2583%2589%25E3%2582%25AF%25E3%2583%25A9%25E3%2582%25A6%25E3%2583%2589%25E3%2582%25BD%25E3%2583%25AA%25E3%2583%25A5%25E3%2583%25BC%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%2F">
+          <i class="fa fa-google-plus"></i><span>%!(EXTRA string=Google&#43;)</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://kamykn.github.io/images/icon/kamykn.png" alt="" />
+    
+    <h4 id="about-card-name">kamykn</h4>
+    
+      <div id="about-card-bio">kamykn(かみけん)の<br />イベント参加や日常のログ</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Serverside And Frontend Engineer.
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Japan
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+                <h3 class="media-heading">GoogleCloudNext18 Day1: GKE On-Prem、kubernetesを利用した企業のためのハイブリッドクラウドソリューション</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Google Cloud Nextで個人的に一番ワクワクした発表でした。
+オンプレでGKEだから移行の話かと思ってたら全くそうではありませんでした。<br />
+タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。<br />
+オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/googlecloudnext18-day1-iot%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%82%A8%E3%83%83%E3%82%B8%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%81%A7%E3%81%AE%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A/">
+                <h3 class="media-heading">GoogleCloudNext18 Day1: IoTを使ったエッジデバイスでの意思決定</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>IoTを使ったエッジデバイスでの意思決定についてのメモを残していきます。<br />
+なお、私は機械学習に関しては経験が無いので自分の理解できた範囲でまとめています。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/googlecloudnext18-day1%E5%9F%BA%E8%AA%BF%E8%AC%9B%E6%BC%94%E3%81%AE%E7%89%B9%E3%81%AB%E5%BE%8C%E5%8D%8A/">
+                <h3 class="media-heading">GoogleCloudNext&#39;18 Day1:基調講演(の特に後半)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>基調講演で素晴らしいと思ったものをいくつかまとめました<br />
+主に機械学習の利用例多めかもしれません。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/vimconf2017%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/">
+                <h3 class="media-heading">Vimconf2017行ってきた</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>※この記事は旧ブログから当ブログに記事を移行しました。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/gorm%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%82%AF%E3%82%A8%E3%83%AAsql%E6%96%87%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B/">
+                <h3 class="media-heading">gormで実行されているクエリ(SQL文)を確認する</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>下記のように実行しているgormの裏側で実行されているクエリが知りたい場合には…</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Where</span>(<span style="color:#e6db74">&#34;id = ?&#34;</span>, <span style="color:#a6e22e">accountID</span>).<span style="color:#a6e22e">Find</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">account</span>)</code></pre></div>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/gorm%E3%81%A7join%E3%82%92%E4%BD%BF%E3%81%86golang/">
+                <h3 class="media-heading">gormでJOINを使う(Golang)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>今回は、gormで返り値にJoinされる方のテーブルの値は取れているが、Joinする方のテーブルの値が取れていないときのTips。
+結論から言うと、JOINを使う場合にはSelect()を指定することと、変数の型に注意。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/%E8%BF%94%E3%82%8A%E5%80%A4%E3%81%A7%E5%9E%8B%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8Bduck-typing/">
+                <h3 class="media-heading">返り値で型指定するDuck Typing</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Go言語では様々な形でダックタイピングが可能です。
+今回はGo言語で利用可能な返り値の型指定を利用する例を紹介します。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">
+                <h3 class="media-heading">Revelの親コントローラを作成する</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>親コントローラ生成について
+親コントローラ（ドキュメントではExtending the Controllerとなっているが）は下記のドキュメントのように作成すると良い。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+                <h3 class="media-heading">Gormでdeleted_atつけてソフトデリートにする</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>まずは上手く取れた記述から</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/">
+                <h3 class="media-heading">Gormでdeleted_atつけてソフトデリートにする</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2016
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>言語での開発ではモデル周りはgorm使っています。<br />
+ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         10 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://kamykn.github.io/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://kamykn.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
