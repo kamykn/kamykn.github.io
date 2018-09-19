@@ -6,10 +6,24 @@
     <description>Recent content in Googlecloudnext18 on kamykn techlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 19 Sep 2018 21:46:02 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 20 Sep 2018 00:43:20 +0900</lastBuildDate>
     
 	<atom:link href="https://kamykn.github.io/tags/googlecloudnext18/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GoogleCloudNext18 Day1: GKE On-Prem、kubernetesを利用した企業のためのハイブリッドクラウドソリューション</title>
+      <link>https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</link>
+      <pubDate>Thu, 20 Sep 2018 00:43:20 +0900</pubDate>
+      
+      <guid>https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</guid>
+      <description>&lt;p&gt;Google Cloud Nextで個人的に一番ワクワクした発表でした。
+オンプレでGKEだから移行の話かと思ってたら全くそうではありませんでした。&lt;br /&gt;
+タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。&lt;br /&gt;
+オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>GoogleCloudNext18 Day1: IoTを使ったエッジデバイスでの意思決定</title>
