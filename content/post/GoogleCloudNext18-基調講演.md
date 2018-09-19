@@ -1,5 +1,5 @@
 ---
-title: "GoogleCloudNext'18 19日基調講演(の特に後半)"
+title: "GoogleCloudNext'18 Day1:基調講演(の特に後半)"
 date: 2018-09-19T14:39:49+09:00
 tags:
 - GoogleCloudNext'18
