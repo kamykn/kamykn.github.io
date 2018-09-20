@@ -8,18 +8,20 @@
 <meta name="generator" content="Hugo 0.48 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="kamykn">
 <meta name="keywords" content="GoogleCloudNext&#39;18">
-<meta name="description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。
+<meta name="description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。そのメモをアップしておきます。
 オンプレとGKEというキーワードで移行の話かと勝手に思ってたら全くそうではありませんでした。
 タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。
 オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。
+※ なお、私自身のKubernetes知識は職場で別事業部で使われているのを見聞きする程度です。
 
 ">
 
 
-<meta property="og:description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。
+<meta property="og:description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。そのメモをアップしておきます。
 オンプレとGKEというキーワードで移行の話かと勝手に思ってたら全くそうではありませんでした。
 タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。
 オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。
+※ なお、私自身のKubernetes知識は職場で別事業部で使われているのを見聞きする程度です。
 
 ">
 <meta property="og:type" content="article">
@@ -28,16 +30,18 @@
 <meta property="og:url" content="https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
 <meta property="twitter:url" content="https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
 <meta property="og:site_name" content="kamykn techlog">
-<meta property="og:description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。
+<meta property="og:description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。そのメモをアップしておきます。
 オンプレとGKEというキーワードで移行の話かと勝手に思ってたら全くそうではありませんでした。
 タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。
 オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。
+※ なお、私自身のKubernetes知識は職場で別事業部で使われているのを見聞きする程度です。
 
 ">
-<meta name="twitter:description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。
+<meta name="twitter:description" content="Google Cloud Nextで個人的に一番ワクワクした発表でした。そのメモをアップしておきます。
 オンプレとGKEというキーワードで移行の話かと勝手に思ってたら全くそうではありませんでした。
 タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。
 オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。
+※ なお、私自身のKubernetes知識は職場で別事業部で使われているのを見聞きする程度です。
 
 ">
 <meta property="og:locale" content="ja-jp">
@@ -255,10 +259,11 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>Google Cloud Nextで個人的に一番ワクワクした発表でした。
+              <p>Google Cloud Nextで個人的に一番ワクワクした発表でした。そのメモをアップしておきます。<br />
 オンプレとGKEというキーワードで移行の話かと勝手に思ってたら全くそうではありませんでした。<br />
 タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。<br />
-オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。</p>
+オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。<br />
+※ なお、私自身のKubernetes知識は職場で別事業部で使われているのを見聞きする程度です。</p>
 
 <p></p>
 
@@ -281,7 +286,7 @@
 
 <h2 id="大変革をもたらす">大変革をもたらす</h2>
 
-<p>On-Premに対してGKE提供する<br />
+<p>On-Premに対してGKE管理画面提供する<br />
 既存のデータセンタに対して提供する<br />
 すなわち、既存のデータセンターに対して革新的であるだろう</p>
 
@@ -291,19 +296,18 @@
 
 <p>Googleのすでに提供しているものと同様の方法でクラスタを実行<br />
 GKE及びGKE On-Premでクラスタのインストール<br />
-GCP以外にも使えるようになります。</p>
+GCP以外に対しても使えるようになります。</p>
 
 <h2 id="gke-on-premがもたらす-ハイブリッドクラウド">GKE On-Premがもたらす『ハイブリッドクラウド』</h2>
 
 <p>その先は東京とは限らないロンドンだったりする<br />
 Co-Lo(Co-Location)</p>
 
-<h1 id="ニーズの有りそうな使い方">ニーズの有りそうな使い方</h1>
+<h1 id="on-premのニーズの有りそうな使い方">On-Premのニーズの有りそうな使い方</h1>
 
 <h2 id="オンラインゲームの場合">オンラインゲームの場合</h2>
 
-<p>近くのGKE On-Premに繋がせて、必要があればCloudに接続させる<br />
-(レイテンシを気にするような場面で)
+<p>近くのOn-Premに繋がせて、必要があればCloudに接続させる(レイテンシを気にするような場面で)<br />
 太いOn-Prem - Cloud間の通信も必要(その用意がGoogle側にはある)<br />
 <img src="https://kamykn.github.io/images/post/2018-09-19/03-4.jpg" alt="オンラインゲームの場合" title="オンラインゲームの場合" /></p>
 
@@ -336,9 +340,9 @@ Co-Lo(Co-Location)</p>
 
 <h2 id="開発-テスト-ci-cd-prod">開発 -&gt; テスト -&gt; CI -&gt; CD -&gt; Prod</h2>
 
-<p>On-Prem<br />
-自由な開発<br />
-そのハードウェアに特化できる<br />
+<p>On-Prem上での開発<br />
+自由な開発になる<br />
+プロダクションユースも想定している、そのハードウェアに特化できるから<br />
 <img src="https://kamykn.github.io/images/post/2018-09-19/03-4.jpg" alt="使い方" title="使い方" /></p>
 
 <h2 id="障害点としてのgoogle">障害点としてのGoogle</h2>
@@ -362,15 +366,15 @@ Co-Lo(Co-Location)</p>
 
 <ul>
 <li>外部のクラスタ(ラップトップ=ノートPC)を登録する<br /></li>
-<li>ローカルでCLIから起動<br /></li>
-<li>管理画面から&hellip;YAMLのマニフェストをダウンロードしてapply<br /></li>
-<li>Googleへの接続も勝手にやってくれるGKEConnectAgent<br /></li>
+<li>ローカルでCLIからエージェント(?)起動<br /></li>
+<li>管理画面から&hellip;YAMLのマニフェストをダウンロードしてローカルにapply<br /></li>
+<li>Googleへの接続も勝手にやってくれる(GKEConnectAgent)</li>
 <li>Credential登録<br /></li>
 <li>登録完了<br /></li>
 <li>クラスタをクリック<br /></li>
 <li>管理画面からいろいろ見れる<br /></li>
-<li>Workload見れる止めれる<br /></li>
-<li>小さいKubernatesがラップトップで動いてる<br /></li>
+<li>Workload<br /></li>
+<li>結果: GKE管理のコンテナがラップトップで動いてる<br /></li>
 </ul>
 
 <h1 id="質問コーナー">質問コーナー</h1>
@@ -397,8 +401,8 @@ Co-Lo(Co-Location)</p>
 
 <h1 id="kamyknの考察">kamyknの考察</h1>
 
-<p>これってOn-Premだけの話ではなくGKE on AWSとかもできるし、下手したらIoT端末とかそんなところまで手が届きそうですね。<br />
-Googleがどうやってサービスをデザインするのかすっっっっっごくワクワクしますね！！</p>
+<p>これってOn-Premだけの話ではなくGKE &lt;-&gt; AWSとかもできそう…、下手したらラップトップでの実演にあったように端末とかIoTとかそんなところまで手が届きそうですね。<br />
+そしてGoogleがどうやってこのサービスをデザインするのかすごくワクワクしますね！</p>
 
 <h1 id="超余談">超余談</h1>
 
@@ -639,10 +643,11 @@ nginx -&gt; エンジネックス<br />
                   Sep 9, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"><p>Google Cloud Nextで個人的に一番ワクワクした発表でした。
+              <div class="media-content hide-xs font-merryweather"><p>Google Cloud Nextで個人的に一番ワクワクした発表でした。そのメモをアップしておきます。<br />
 オンプレとGKEというキーワードで移行の話かと勝手に思ってたら全くそうではありませんでした。<br />
 タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。<br />
-オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。</p>
+オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。<br />
+※ なお、私自身のKubernetes知識は職場で別事業部で使われているのを見聞きする程度です。</p>
 
 <p></p></div>
             </div>
