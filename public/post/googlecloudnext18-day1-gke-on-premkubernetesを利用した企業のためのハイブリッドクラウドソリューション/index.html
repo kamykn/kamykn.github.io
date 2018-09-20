@@ -303,7 +303,8 @@ Co-Lo(Co-Location)<br />
 
 <h2 id="オンラインゲームの場合">オンラインゲームの場合</h2>
 
-<p>近くのGKE On-Premに繋がせて、そこからCloudに接続させる<br />
+<p>近くのGKE On-Premに繋がせて、必要があればCloudに接続させる<br />
+(レイテンシを気にするような場面で)
 太いOn-Prem - Cloud間の通信も必要(その用意がGoogle側にはある)<br />
 <img src="https://kamykn.github.io/images/post/2018-09-19/03-4.jpg" alt="オンラインゲームの場合" title="オンラインゲームの場合" /></p>
 
@@ -319,7 +320,7 @@ Co-Lo(Co-Location)<br />
 <li>責任制限</li>
 </ul>
 
-<p>のあるものをOn-Prem</p>
+<p>のような持ち出しに懸念があるものをOn-Prem</p>
 
 <p>豊富なセキュリティ機能セットをCloudへ</p>
 
@@ -337,19 +338,24 @@ Co-Lo(Co-Location)<br />
 そのハードウェアに特化できる<br />
 <img src="https://kamykn.github.io/images/post/2018-09-19/03-4.jpg" alt="使い方" title="使い方" /></p>
 
+<h2 id="障害点としてのgoogle">障害点としてのGoogle</h2>
+
+<p>Googleだけに頼ると万が一Googleが落ちてしまった場合に影響が出てしまい困る場合<br />
+いろんなデータセンターに環境を用意し、その管理をGKE On-Premでやる</p>
+
 <h1 id="googleのプラネットスケールのクラウドセキュアデータが生産性を押し上げる">Googleのプラネットスケールのクラウドセキュアデータが生産性を押し上げる</h1>
 
 <p>企業のデータセンターとテクノロジーが価値を届ける<br />
 バイナリのコードを皆さんのデータセンタに届けます</p>
 
-<h1 id="google-cloudがデータセンターのエクステンションそして加速装置となり得る">Google Cloudがデータセンターのエクステンションそして加速装置となり得る</h1>
+<h2 id="google-cloudがデータセンターのエクステンションそして加速装置となり得る">Google Cloudがデータセンターのエクステンションそして加速装置となり得る</h2>
 
-<h1 id="デモ">デモ</h1>
+<h2 id="デモ">デモ</h2>
 
 <p>On-Premでいけるということは&hellip;<br />
 ラップトップでも行ける！！！！</p>
 
-<p>デモ内容</p>
+<h3 id="デモ内容">デモ内容</h3>
 
 <ul>
 <li>外部のクラスタ(ラップトップ=ノートPC)を登録する<br /></li>
