@@ -18,6 +18,8 @@ Google Cloud Nextで個人的に一番ワクワクした発表でした。その
 
 <!--more-->
 
+![GKE On-Prem](/images/post/2018-09-19/03-1.jpg "GKE On-Prem")
+
 # GKE On-Prem、kubernetesを利用した企業のためのハイブリッドクラウドソリューション
 ## スピーカー
 

@@ -6,6 +6,8 @@ tags:
 keywords:
 - tech
 - GoogleCloudNext'18
+thumbnailImagePosition: left
+thumbnailImage: /images/post/2018-09-19/01.jpg
 ---
 
 基調講演で素晴らしいと思ったものをいくつかまとめました  
@@ -15,6 +17,8 @@ keywords:
 <!--more-->
 
 ※ あと、参加が30分ほど遅くなったので最初の方は聞いてません。
+
+![GoogleCloudNext18](/images/post/2018-09-19/01.jpg "GoogleCloudNext18")
 
 ## Cloud AutoML (※ML = Machine Learning)
 - Machine Leaningの自動化がすすむ
