@@ -4,8 +4,8 @@ date: 2018-09-19T14:39:49+09:00
 tags:
 - GoogleCloudNext'18
 keywords:
-- tech
 - GoogleCloudNext'18
+- event
 thumbnailImagePosition: left
 thumbnailImage: /images/post/2018-09-19/01.jpg
 ---

@@ -6,6 +6,7 @@ tags:
 - GoogleCloudNext'18
 keywords:
 - GoogleCloudNext'18
+- event
 thumbnailImagePosition: left
 thumbnailImage: /images/post/2018-09-19/03-1.jpg
 ---

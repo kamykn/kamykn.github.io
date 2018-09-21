@@ -114,3 +114,7 @@ h1 {
 	}
 }
 
+hr {
+	margin: 1.5em 0 0;
+    border: 1px solid #CCCCCC;
+}
