@@ -17,8 +17,8 @@ keywords:
 ※ あと、参加が30分ほど遅くなったので最初の方は聞いてません。
 
 ## Cloud AutoML (※ML = Machine Learning)
-- Machine Leaningの自動化
-  - AutoML Vision
+- Machine Leaningの自動化がすすむ
+- AutoML Vision
     - 画像の機械学習
 - AutoML Natural Language
   - 自然言語の機械学習
@@ -61,7 +61,7 @@ keywords:
 
 ## 変革
 - クラウドテクノロジー
-- 会社の分化
+- 会社の文化
 
 の理解が必要(無しには出来ない)
 
