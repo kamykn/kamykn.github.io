@@ -6,10 +6,23 @@
     <description>Recent content on kamykn techlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 09 Oct 2018 19:06:22 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 26 Oct 2018 19:22:48 +0900</lastBuildDate>
     
 	<atom:link href="https://kamykn.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>執筆の技術を勉強する会</title>
+      <link>https://kamykn.github.io/post/%E5%9F%B7%E7%AD%86%E3%81%AE%E6%8A%80%E8%A1%93%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%99%E3%82%8B%E4%BC%9A/</link>
+      <pubDate>Fri, 26 Oct 2018 19:22:48 +0900</pubDate>
+      
+      <guid>https://kamykn.github.io/post/%E5%9F%B7%E7%AD%86%E3%81%AE%E6%8A%80%E8%A1%93%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%99%E3%82%8B%E4%BC%9A/</guid>
+      <description>&lt;p&gt;今回は『執筆の技術を勉強する会』に参加してきました！&lt;br /&gt;
+最近自分の会社でも技術書展5を受けてやりたい機運が高まってきているようなので、&lt;br /&gt;
+お題的にもレアなこの会に参加してきました😊&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>日々のアウトプットが変える！あなたのエンジニア・ライフ</title>
