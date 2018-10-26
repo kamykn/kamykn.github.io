@@ -6,7 +6,7 @@
     <description>Recent content in Tags on kamykn techlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Tue, 09 Oct 2018 19:06:22 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 26 Oct 2018 19:22:48 +0900</lastBuildDate>
     
 	<atom:link href="https://kamykn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Event</title>
       <link>https://kamykn.github.io/tags/event/</link>
-      <pubDate>Tue, 09 Oct 2018 19:06:22 +0900</pubDate>
+      <pubDate>Fri, 26 Oct 2018 19:22:48 +0900</pubDate>
       
       <guid>https://kamykn.github.io/tags/event/</guid>
       <description></description>
@@ -89,6 +89,15 @@
       <pubDate>Mon, 08 Oct 2018 01:57:54 +0900</pubDate>
       
       <guid>https://kamykn.github.io/tags/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技術書展</title>
+      <link>https://kamykn.github.io/tags/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%B1%95/</link>
+      <pubDate>Fri, 26 Oct 2018 19:22:48 +0900</pubDate>
+      
+      <guid>https://kamykn.github.io/tags/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%B1%95/</guid>
       <description></description>
     </item>
     
