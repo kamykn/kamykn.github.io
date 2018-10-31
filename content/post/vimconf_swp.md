@@ -1,5 +1,5 @@
 ---
-title: ".vimconf.swp 2018"
+title: "vimconf.swp 2018"
 date: 2018-10-31T19:38:24+09:00
 categories:
 tags:
