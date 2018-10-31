@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kamykn.github.io/post/.vimconf.swp-2018/</loc>
+    <lastmod>2018-10-31T19:38:24+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kamykn.github.io/post/%E5%9F%B7%E7%AD%86%E3%81%AE%E6%8A%80%E8%A1%93%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%99%E3%82%8B%E4%BC%9A/</loc>
     <lastmod>2018-10-26T19:22:48+09:00</lastmod>
   </url>
@@ -84,7 +89,7 @@
   
   <url>
     <loc>https://kamykn.github.io/tags/event/</loc>
-    <lastmod>2018-10-26T19:22:48+09:00</lastmod>
+    <lastmod>2018-10-31T19:38:24+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -114,7 +119,7 @@
   
   <url>
     <loc>https://kamykn.github.io/post/</loc>
-    <lastmod>2018-10-26T19:22:48+09:00</lastmod>
+    <lastmod>2018-10-31T19:38:24+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -126,7 +131,7 @@
   
   <url>
     <loc>https://kamykn.github.io/tags/</loc>
-    <lastmod>2018-10-26T19:22:48+09:00</lastmod>
+    <lastmod>2018-10-31T19:38:24+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -138,13 +143,13 @@
   
   <url>
     <loc>https://kamykn.github.io/tags/vimconf/</loc>
-    <lastmod>2017-11-04T23:56:49+09:00</lastmod>
+    <lastmod>2018-10-31T19:38:24+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kamykn.github.io/</loc>
-    <lastmod>2018-10-26T19:22:48+09:00</lastmod>
+    <lastmod>2018-10-31T19:38:24+09:00</lastmod>
     <priority>0</priority>
   </url>
   

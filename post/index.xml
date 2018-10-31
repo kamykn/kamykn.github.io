@@ -6,10 +6,23 @@
     <description>Recent content in Posts on kamykn techlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 26 Oct 2018 19:22:48 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 31 Oct 2018 19:38:24 +0900</lastBuildDate>
     
 	<atom:link href="https://kamykn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>.vimconf.swp 2018</title>
+      <link>https://kamykn.github.io/post/.vimconf.swp-2018/</link>
+      <pubDate>Wed, 31 Oct 2018 19:38:24 +0900</pubDate>
+      
+      <guid>https://kamykn.github.io/post/.vimconf.swp-2018/</guid>
+      <description>&lt;p&gt;.vimconf.swp行ってきました〜！&lt;br /&gt;
+今回のイベントはVimConf2018のRubyで言うところのRejectKaigiに当たるようなものだそうで、&lt;br /&gt;
+VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台の裏話が聞けるかもということで楽しみにしてました😊&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>執筆の技術を勉強する会</title>
