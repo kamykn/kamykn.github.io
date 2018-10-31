@@ -151,8 +151,10 @@ VimConf2018がさらに楽しみになってきました！😆
 素晴らしい会場でした。  
 
 ![.vimconf.swp](/images/post/2018-10-31/3.jpg ".vimconf.swp")
+(入りはしなかったけどキレイそうなエントランス)
 
 ![.vimconf.swp](/images/post/2018-10-31/2.jpg ".vimconf.swp")
+(懇親会)
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">vimconf.swp楽しかった！<br>最初に話した2人が学生でビックリだった😆<a href="https://twitter.com/hashtag/vimconfswp?src=hash&amp;ref_src=twsrc%5Etfw">#vimconfswp</a></p>&mdash; かみけん (@_kamykn_) <a href="https://twitter.com/_kamykn_/status/1057618038638276609?ref_src=twsrc%5Etfw">2018年10月31日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
