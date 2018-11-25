@@ -4,7 +4,8 @@ date: 2018-11-24T09:54:57+09:00
 categories:
 tags:
 - event
-- VimConf
+- vimconf
+- vim
 keywords:
 thumbnailImage: /images/post/2018-11-24/01.jpg
 thumbnailImagePosition: left
