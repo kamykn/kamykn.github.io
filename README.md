@@ -3,6 +3,10 @@
 ```
 brew install hugo
 ghq get git@github.com:kamykn/kamykn.github.io.git
+
+# project root
+cd themes
+git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git
 ```
 
 # 使い方メモ
@@ -15,7 +19,7 @@ hugo server
 hugo
 
 # 記事作成
-hugo new post/<記事名>.md
+hugo new contents/post/<記事名>.md
 
 # push
 git push origin HEAD # いつもの

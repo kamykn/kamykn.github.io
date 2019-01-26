@@ -6,10 +6,20 @@
     <description>Recent content on kamykn techlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 24 Nov 2018 09:54:57 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jan 2019 13:03:26 +0900</lastBuildDate>
     
 	<atom:link href="https://kamykn.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Yahoo! JAPAN Tech Conference 2019</title>
+      <link>https://kamykn.github.io/post/yahoo-japan-tech-conference-2019/</link>
+      <pubDate>Sat, 26 Jan 2019 13:03:26 +0900</pubDate>
+      
+      <guid>https://kamykn.github.io/post/yahoo-japan-tech-conference-2019/</guid>
+      <description>&lt;p&gt;久々のイベント参加です！&lt;br /&gt;
+Yahoo! JAPANのTech Conference 2019に参加してきました！&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Vimconf_2018</title>
@@ -18,9 +28,7 @@
       
       <guid>https://kamykn.github.io/post/vimconf_2018/</guid>
       <description>&lt;p&gt;今年も行きました！VimConf！
-去年も参加した身ですが、今年はなんと言ってもVimの父であるBramが来るということで、EarlyBirdチケットとって参加してきました！&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+去年も参加した身ですが、今年はなんと言ってもVimの父であるBramが来るということで、EarlyBirdチケットとって参加してきました！&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -31,9 +39,7 @@
       <guid>https://kamykn.github.io/post/vimconf.swp-2018/</guid>
       <description>&lt;p&gt;.vimconf.swp行ってきました〜！&lt;br /&gt;
 今回のイベントはVimConf2018のRubyで言うところのRejectKaigiに当たるようなものだそうで、&lt;br /&gt;
-VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台の裏話が聞けるかもということで楽しみにしてました😊&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台の裏話が聞けるかもということで楽しみにしてました😊&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,9 +50,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       <guid>https://kamykn.github.io/post/%E5%9F%B7%E7%AD%86%E3%81%AE%E6%8A%80%E8%A1%93%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%99%E3%82%8B%E4%BC%9A/</guid>
       <description>&lt;p&gt;今回は『執筆の技術を勉強する会』に参加してきました！&lt;br /&gt;
 最近自分の会社でも技術書展5を受けてやりたい機運が高まってきているようなので、&lt;br /&gt;
-お題的にもレアなこの会に参加してきました😊&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+お題的にもレアなこの会に参加してきました😊&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -57,9 +61,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       <guid>https://kamykn.github.io/post/%E6%97%A5%E3%80%85%E3%81%AE%E3%82%A2%E3%82%A6%E3%83%88%E3%83%97%E3%83%83%E3%83%88%E3%81%8C%E5%A4%89%E3%81%88%E3%82%8B%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%A9%E3%82%A4%E3%83%95/</guid>
       <description>&lt;p&gt;本日はLIFULLさんの会場で&lt;br /&gt;
 日々のアウトプットが変える！あなたのエンジニア・ライフ&lt;br /&gt;
-という表題のイベントに参加してきました。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+という表題のイベントに参加してきました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -70,9 +72,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       <guid>https://kamykn.github.io/post/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B85/</guid>
       <description>&lt;p&gt;技術書典5に参加してきました！&lt;br /&gt;
 徳を積んだので(?)急遽参加できるようになりまして、&lt;br /&gt;
-目的もなく参加したハズが結果としてたくさん買うことに…📗&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+目的もなく参加したハズが結果としてたくさん買うことに…📗&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -83,9 +83,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       <guid>https://kamykn.github.io/post/%E7%99%BB%E5%A3%87%E3%81%AE%E6%8A%80%E8%A1%93%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%99%E3%82%8B%E4%BC%9A1/</guid>
       <description>&lt;p&gt;登壇の技術を勉強する会 に行ってきました！&lt;/p&gt;
 
-&lt;p&gt;日本酒美味しかったです(๑´ڡ｀๑)ぺろり&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;日本酒美味しかったです(๑´ڡ｀๑)ぺろり&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -98,9 +96,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
 オンプレとGKEというキーワードで移行の話かと勝手に思ってたら全くそうではありませんでした。&lt;br /&gt;
 タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。&lt;br /&gt;
 オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。&lt;br /&gt;
-※ なお、私自身のKubernetes知識は職場で別事業部で使われているのを見聞きする程度です。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+※ なお、私自身のKubernetes知識は職場で別事業部で使われているのを見聞きする程度です。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -110,9 +106,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       
       <guid>https://kamykn.github.io/post/googlecloudnext18-day1-iot%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%82%A8%E3%83%83%E3%82%B8%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%81%A7%E3%81%AE%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A/</guid>
       <description>&lt;p&gt;IoTを使ったエッジデバイスでの意思決定についてのメモを残していきます。&lt;br /&gt;
-なお、私は機械学習に関しては経験が無いので自分の理解できた範囲でまとめています。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+なお、私は機械学習に関しては経験が無いので自分の理解できた範囲でまとめています。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -122,9 +116,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       
       <guid>https://kamykn.github.io/post/googlecloudnext18-day1%E5%9F%BA%E8%AA%BF%E8%AC%9B%E6%BC%94%E3%81%AE%E7%89%B9%E3%81%AB%E5%BE%8C%E5%8D%8A/</guid>
       <description>&lt;p&gt;基調講演で素晴らしいと思ったものをいくつかまとめました&lt;br /&gt;
-主に機械学習の利用例多めかもしれません。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+主に機械学習の利用例多めかもしれません。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -133,9 +125,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       <pubDate>Sat, 04 Nov 2017 23:56:49 +0900</pubDate>
       
       <guid>https://kamykn.github.io/post/vimconf2017%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</guid>
-      <description>&lt;p&gt;※この記事は旧ブログから当ブログに記事を移行しました。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;※この記事は旧ブログから当ブログに記事を移行しました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -146,9 +136,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       <guid>https://kamykn.github.io/post/gorm%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%82%AF%E3%82%A8%E3%83%AAsql%E6%96%87%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B/</guid>
       <description>&lt;p&gt;下記のように実行しているgormの裏側で実行されているクエリが知りたい場合には…&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;db&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Where&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;id = ?&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;accountID&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;Find&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;account&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;db&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Where&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;id = ?&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;accountID&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;Find&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;account&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -158,9 +146,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       
       <guid>https://kamykn.github.io/post/gorm%E3%81%A7join%E3%82%92%E4%BD%BF%E3%81%86golang/</guid>
       <description>&lt;p&gt;今回は、gormで返り値にJoinされる方のテーブルの値は取れているが、Joinする方のテーブルの値が取れていないときのTips。
-結論から言うと、JOINを使う場合にはSelect()を指定することと、変数の型に注意。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+結論から言うと、JOINを使う場合にはSelect()を指定することと、変数の型に注意。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -170,9 +156,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       
       <guid>https://kamykn.github.io/post/%E8%BF%94%E3%82%8A%E5%80%A4%E3%81%A7%E5%9E%8B%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8Bduck-typing/</guid>
       <description>&lt;p&gt;Go言語では様々な形でダックタイピングが可能です。
-今回はGo言語で利用可能な返り値の型指定を利用する例を紹介します。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+今回はGo言語で利用可能な返り値の型指定を利用する例を紹介します。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -182,9 +166,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       
       <guid>https://kamykn.github.io/post/revel%E3%81%AE%E8%A6%AA%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%A9%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
       <description>&lt;p&gt;親コントローラ生成について
-親コントローラ（ドキュメントではExtending the Controllerとなっているが）は下記のドキュメントのように作成すると良い。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+親コントローラ（ドキュメントではExtending the Controllerとなっているが）は下記のドキュメントのように作成すると良い。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -193,9 +175,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       <pubDate>Sun, 11 Dec 2016 12:35:45 +0900</pubDate>
       
       <guid>https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</guid>
-      <description>&lt;p&gt;まずは上手く取れた記述から&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;まずは上手く取れた記述から&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -205,9 +185,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       
       <guid>https://kamykn.github.io/post/gorm%E3%81%A7deleted_at%E3%81%A4%E3%81%91%E3%81%A6%E3%82%BD%E3%83%95%E3%83%88%E3%83%87%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AB%E3%81%99%E3%82%8B/</guid>
       <description>&lt;p&gt;言語での開発ではモデル周りはgorm使っています。&lt;br /&gt;
-ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+ソフトデリート利用するときにちょっとハマって、デフォルトで0000-00-00 00:00:00が入ってしまう人のためのTips。&lt;/p&gt;</description>
     </item>
     
   </channel>
