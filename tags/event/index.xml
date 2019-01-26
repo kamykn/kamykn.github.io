@@ -6,10 +6,20 @@
     <description>Recent content in Event on kamykn techlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 24 Nov 2018 09:54:57 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jan 2019 13:03:26 +0900</lastBuildDate>
     
 	<atom:link href="https://kamykn.github.io/tags/event/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Yahoo! JAPAN Tech Conference 2019</title>
+      <link>https://kamykn.github.io/post/yahoo-japan-tech-conference-2019/</link>
+      <pubDate>Sat, 26 Jan 2019 13:03:26 +0900</pubDate>
+      
+      <guid>https://kamykn.github.io/post/yahoo-japan-tech-conference-2019/</guid>
+      <description>&lt;p&gt;久々のイベント参加です！&lt;br /&gt;
+Yahoo! JAPANのTech Conference 2019に参加してきました！&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Vimconf_2018</title>
@@ -18,9 +28,7 @@
       
       <guid>https://kamykn.github.io/post/vimconf_2018/</guid>
       <description>&lt;p&gt;今年も行きました！VimConf！
-去年も参加した身ですが、今年はなんと言ってもVimの父であるBramが来るということで、EarlyBirdチケットとって参加してきました！&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+去年も参加した身ですが、今年はなんと言ってもVimの父であるBramが来るということで、EarlyBirdチケットとって参加してきました！&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -31,9 +39,7 @@
       <guid>https://kamykn.github.io/post/vimconf.swp-2018/</guid>
       <description>&lt;p&gt;.vimconf.swp行ってきました〜！&lt;br /&gt;
 今回のイベントはVimConf2018のRubyで言うところのRejectKaigiに当たるようなものだそうで、&lt;br /&gt;
-VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台の裏話が聞けるかもということで楽しみにしてました😊&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台の裏話が聞けるかもということで楽しみにしてました😊&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,9 +50,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       <guid>https://kamykn.github.io/post/%E5%9F%B7%E7%AD%86%E3%81%AE%E6%8A%80%E8%A1%93%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%99%E3%82%8B%E4%BC%9A/</guid>
       <description>&lt;p&gt;今回は『執筆の技術を勉強する会』に参加してきました！&lt;br /&gt;
 最近自分の会社でも技術書展5を受けてやりたい機運が高まってきているようなので、&lt;br /&gt;
-お題的にもレアなこの会に参加してきました😊&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+お題的にもレアなこの会に参加してきました😊&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -57,9 +61,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       <guid>https://kamykn.github.io/post/%E6%97%A5%E3%80%85%E3%81%AE%E3%82%A2%E3%82%A6%E3%83%88%E3%83%97%E3%83%83%E3%83%88%E3%81%8C%E5%A4%89%E3%81%88%E3%82%8B%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%A9%E3%82%A4%E3%83%95/</guid>
       <description>&lt;p&gt;本日はLIFULLさんの会場で&lt;br /&gt;
 日々のアウトプットが変える！あなたのエンジニア・ライフ&lt;br /&gt;
-という表題のイベントに参加してきました。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+という表題のイベントに参加してきました。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -70,9 +72,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       <guid>https://kamykn.github.io/post/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B85/</guid>
       <description>&lt;p&gt;技術書典5に参加してきました！&lt;br /&gt;
 徳を積んだので(?)急遽参加できるようになりまして、&lt;br /&gt;
-目的もなく参加したハズが結果としてたくさん買うことに…📗&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+目的もなく参加したハズが結果としてたくさん買うことに…📗&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -83,9 +83,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
       <guid>https://kamykn.github.io/post/%E7%99%BB%E5%A3%87%E3%81%AE%E6%8A%80%E8%A1%93%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%99%E3%82%8B%E4%BC%9A1/</guid>
       <description>&lt;p&gt;登壇の技術を勉強する会 に行ってきました！&lt;/p&gt;
 
-&lt;p&gt;日本酒美味しかったです(๑´ڡ｀๑)ぺろり&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;日本酒美味しかったです(๑´ڡ｀๑)ぺろり&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -5,21 +5,17 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.48 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="generator" content="Hugo 0.52 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="kamykn">
 <meta name="keywords" content="">
 <meta name="description" content="下記のように実行しているgormの裏側で実行されているクエリが知りたい場合には…
 
-1db.Where(&#34;id = ?&#34;, accountID).Find(&amp;account)
-
-">
+1db.Where(&#34;id = ?&#34;, accountID).Find(&amp;account)">
 
 
 <meta property="og:description" content="下記のように実行しているgormの裏側で実行されているクエリが知りたい場合には…
 
-1db.Where(&#34;id = ?&#34;, accountID).Find(&amp;account)
-
-">
+1db.Where(&#34;id = ?&#34;, accountID).Find(&amp;account)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gormで実行されているクエリ(SQL文)を確認する">
 <meta name="twitter:title" content="gormで実行されているクエリ(SQL文)を確認する">
@@ -28,14 +24,10 @@
 <meta property="og:site_name" content="kamykn techlog">
 <meta property="og:description" content="下記のように実行しているgormの裏側で実行されているクエリが知りたい場合には…
 
-1db.Where(&#34;id = ?&#34;, accountID).Find(&amp;account)
-
-">
+1db.Where(&#34;id = ?&#34;, accountID).Find(&amp;account)">
 <meta name="twitter:description" content="下記のように実行しているgormの裏側で実行されているクエリが知りたい場合には…
 
-1db.Where(&#34;id = ?&#34;, accountID).Find(&amp;account)
-
-">
+1db.Where(&#34;id = ?&#34;, accountID).Find(&amp;account)">
 <meta property="og:locale" content="ja-jp">
 
   
@@ -254,8 +246,6 @@
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Where</span>(<span style="color:#e6db74">&#34;id = ?&#34;</span>, <span style="color:#a6e22e">accountID</span>).<span style="color:#a6e22e">Find</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">account</span>)</code></pre></div>
 
-<p></p>
-
 <p>Debug()を追加してあげると良い。
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1</span><span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Debug</span>().<span style="color:#a6e22e">Where</span>(<span style="color:#e6db74">&#34;id = ?&#34;</span>, <span style="color:#a6e22e">accountID</span>).<span style="color:#a6e22e">Find</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">account</span>)</code></pre></div></p>
               
@@ -335,7 +325,7 @@
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2018 kamykn. 
+    &copy; 2019 kamykn. 
   </span>
 </footer>
 
@@ -465,6 +455,24 @@
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/yahoo-japan-tech-conference-2019/">
+                <h3 class="media-heading">Yahoo! JAPAN Tech Conference 2019</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>久々のイベント参加です！<br />
+Yahoo! JAPANのTech Conference 2019に参加してきました！</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://kamykn.github.io/post/vimconf_2018/">
                 <h3 class="media-heading">Vimconf_2018</h3>
               </a>
@@ -474,9 +482,7 @@
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather"><p>今年も行きました！VimConf！
-去年も参加した身ですが、今年はなんと言ってもVimの父であるBramが来るということで、EarlyBirdチケットとって参加してきました！</p>
-
-<p></p></div>
+去年も参加した身ですが、今年はなんと言ってもVimの父であるBramが来るということで、EarlyBirdチケットとって参加してきました！</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -495,9 +501,7 @@
               </span>
               <div class="media-content hide-xs font-merryweather"><p>.vimconf.swp行ってきました〜！<br />
 今回のイベントはVimConf2018のRubyで言うところのRejectKaigiに当たるようなものだそうで、<br />
-VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台の裏話が聞けるかもということで楽しみにしてました😊</p>
-
-<p></p></div>
+VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台の裏話が聞けるかもということで楽しみにしてました😊</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -516,9 +520,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
               </span>
               <div class="media-content hide-xs font-merryweather"><p>今回は『執筆の技術を勉強する会』に参加してきました！<br />
 最近自分の会社でも技術書展5を受けてやりたい機運が高まってきているようなので、<br />
-お題的にもレアなこの会に参加してきました😊</p>
-
-<p></p></div>
+お題的にもレアなこの会に参加してきました😊</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -537,9 +539,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
               </span>
               <div class="media-content hide-xs font-merryweather"><p>本日はLIFULLさんの会場で<br />
 日々のアウトプットが変える！あなたのエンジニア・ライフ<br />
-という表題のイベントに参加してきました。</p>
-
-<p></p></div>
+という表題のイベントに参加してきました。</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -558,9 +558,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
               </span>
               <div class="media-content hide-xs font-merryweather"><p>技術書典5に参加してきました！<br />
 徳を積んだので(?)急遽参加できるようになりまして、<br />
-目的もなく参加したハズが結果としてたくさん買うことに…📗</p>
-
-<p></p></div>
+目的もなく参加したハズが結果としてたくさん買うことに…📗</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -579,9 +577,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
               </span>
               <div class="media-content hide-xs font-merryweather"><p>登壇の技術を勉強する会 に行ってきました！</p>
 
-<p>日本酒美味しかったです(๑´ڡ｀๑)ぺろり</p>
-
-<p></p></div>
+<p>日本酒美味しかったです(๑´ڡ｀๑)ぺろり</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -602,9 +598,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
 オンプレとGKEというキーワードで移行の話かと勝手に思ってたら全くそうではありませんでした。<br />
 タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。<br />
 オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。<br />
-※ なお、私自身のKubernetes知識は職場で別事業部で使われているのを見聞きする程度です。</p>
-
-<p></p></div>
+※ なお、私自身のKubernetes知識は職場で別事業部で使われているのを見聞きする程度です。</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -622,9 +616,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather"><p>IoTを使ったエッジデバイスでの意思決定についてのメモを残していきます。<br />
-なお、私は機械学習に関しては経験が無いので自分の理解できた範囲でまとめています。</p>
-
-<p></p></div>
+なお、私は機械学習に関しては経験が無いので自分の理解できた範囲でまとめています。</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -642,28 +634,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather"><p>基調講演で素晴らしいと思ったものをいくつかまとめました<br />
-主に機械学習の利用例多めかもしれません。</p>
-
-<p></p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://kamykn.github.io/post/vimconf2017%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/">
-                <h3 class="media-heading">Vimconf2017行ってきた</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Nov 11, 2017
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>※この記事は旧ブログから当ブログに記事を移行しました。</p>
-
-<p></p></div>
+主に機械学習の利用例多めかもしれません。</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -676,7 +647,7 @@ VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         16 posts found
+         17 posts found
       </p>
     </div>
   </div>
