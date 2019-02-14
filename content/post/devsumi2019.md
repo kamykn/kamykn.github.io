@@ -15,9 +15,10 @@ thumbnailImage: /images/post/2019-02-14/01.jpg
 
 <!--more-->
 ![デブサミ2019](/images/post/2019-02-14/01.jpg "デブサミ2019")
+(こちらの画像は1日目の12:50頃の言語投票状況)
 
-(なお、こちらは14日の分の記事で、15日は私は通常通り業務に戻るので明日は参加しない予定になります。)
 今回もいくつかセッション聞いてきたのですが、いくつかピックアップしてログとして残しておきます。
+(なお、こちらは14日の分の記事で、15日は私は通常通り業務に戻るので明日は参加しない予定になります。)
 
 # GitHub Actions
 Takahumi Ikeda さん  
@@ -61,9 +62,10 @@ github: ikeike443
 
 ## デモ
 - EKS用意してください
-- シークレットなAPI(octocatの名言AA)
-	- https://api.github.com/octocat
-	- <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Githubの隠れAPIとのこと <a href="https://t.co/NN3qYStiMC">https://t.co/NN3qYStiMC</a></p>&mdash; かみけん (@_kamykn_) <a href="https://twitter.com/_kamykn_/status/1095877004526641154?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+- (ちょっと横道にそれて)シークレットなAPIの紹介
+	- octocatの名言AA
+		- https://api.github.com/octocat
+		- <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Githubの隠れAPIとのこと <a href="https://t.co/NN3qYStiMC">https://t.co/NN3qYStiMC</a></p>&mdash; かみけん (@_kamykn_) <a href="https://twitter.com/_kamykn_/status/1095877004526641154?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 - リッチGUIで現在どれが処理されているかわかる
@@ -88,7 +90,7 @@ github: ikeike443
 外に任意にトリガーできるイベント
 
 ## 情報を得るには
-GithubActionsというオーガニゼーションがあるので見てね  
+GithubActionsというOrganizationがあるので見てね  
 マーケットプレースにAction登録できる  
 awesome actionsという個人のブランチがある  
 
@@ -111,6 +113,7 @@ Masaya Aoyamaさん
 
 ## CloudNativeに適したアーキテクチャー
 マイクロサービス
+
 - マイクロサービスごとに技術選定
 - 大規模な開発(部門ごとの専門化)
 - デプロイ
@@ -133,13 +136,15 @@ Microservice間の
 
 ### Dockerコンテナの起動とは
 新たなレイヤを作成して起動すること  
+
 - 新たなread write可能なレイヤが追加されただけのイメージ
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">今日のデブサミのKubernetesスライドの、Dockerfileの内容に対応してDockerコンテナの中のレイヤが増えていくイメージが、すごくなるほど感があった。<a href="https://t.co/CdGGpR6KAR">https://t.co/CdGGpR6KAR</a> <a href="https://t.co/CeSUmx8LaF">pic.twitter.com/CeSUmx8LaF</a></p>&mdash; かみけん (@_kamykn_) <a href="https://twitter.com/_kamykn_/status/1096076501747851265?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-DockerfileのRUNの単位でハッシュを持っているのはそれ分のレイヤが作られているイメージで、
-コンテナはベースのimageにそのレイヤが増えているイメージなのか・・・！
+DockerfileのRUNとかの単位でハッシュを持っているのは、分離したレイヤが作られているから。  
+ベースのimageにそれらのレイヤが適用されていってbuildされているということなのか・・・！  
+そしてコンテナ起動は最後のReadWriteなレイヤが追加されるということだと。なるほど。
 
 ## kubernetes
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">他のオーケストレーションツールではなく、kubernetesが支持されるのはコンテナ技術の標準に沿っているから <a href="https://twitter.com/hashtag/devsumiA?src=hash&amp;ref_src=twsrc%5Etfw">#devsumiA</a> <a href="https://twitter.com/hashtag/devsumi?src=hash&amp;ref_src=twsrc%5Etfw">#devsumi</a> <a href="https://t.co/IIG07V8hQ3">pic.twitter.com/IIG07V8hQ3</a></p>&mdash; かみけん (@_kamykn_) <a href="https://twitter.com/_kamykn_/status/1095902310629163008?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
@@ -155,7 +160,6 @@ DockerfileのRUNの単位でハッシュを持っているのはそれ分のレ�
 - ロードバランサへの追加
 
 Developerはマニフェストを変更するだけ  
-何秒間隔で、何台ずつ、
 
 - KubernetesはGoogkeが社内で数年使っていた
   - コンテナクラスタマネージャBorgをベースにOSS化したもの
@@ -172,6 +176,7 @@ Developerはマニフェストを変更するだけ
 
   
 **例: エアコンならば**
+
 - 30度
 - 30度との差
 - 上げる
@@ -198,9 +203,9 @@ https://www.amazon.co.jp/dp/4295004804/ref=asc_df_42950048042585734/?tag=jpgo-22
 
 
 # ヤフー株式会社におけるフロントエンドの取り組み
-向井 咲人さん
-平山 涼也さん
-森本 恭平さん
+- 向井 咲人さん
+- 平山 涼也さん
+- 森本 恭平さん
 
 
 ## 登壇に至った経緯
@@ -222,22 +227,22 @@ https://techblog.yahoo.co.jp/advent-calendar-2018/yahoo-frontend/
 	- システム統括本部
 
 ## 数字
-従業員数: 6618人
-エンジニア: 2600人
-サービス数: 100サービス
+- 従業員数: 6618人
+- エンジニア: 2600人
+- サービス数: 100サービス
 
-## どんなサービスフロントエンド
+## どんなサービスにフロントエンドエンジニアリングしてる？
+
 広告入稿管理画面のフロントエンド  
 Yahoo ディスプレイネットワーク (YDN)  
 
-フロントエンドの開発チー布人数: 訳１２人  
-開発している年数: 10年  
-
-2年前: jQuety PHP  
-今: React + TypeScript * Redux + node.js  
+- フロントエンドの開発チー布人数: 訳１２人
+- 開発している年数: 10年
+- 2年前: jQuety PHP
+- 今: React + TypeScript * Redux + node.js
 
 刷新をしながらもビジネス要件の機能開発を進めなければならない  
-並行して3〜4この機能開発が進んでいく  
+並行して3〜4個の機能開発が進んでいく  
 コードレビューの時間が爆増  
 
 ## フロントエンドエンジニア人数
@@ -275,8 +280,10 @@ YahooShopping ABテストを回しまくっている
 検索ページの刷新中  
  
 
-## qiita: rhirayamaaan
-Atomic デザインって難しくない？って記事
+## Atomic Designってデザイナーには難しくない！？という話
+https://qiita.com/rhirayamaaan/items/7f990e146ec01f2e7e08
+
+qiita: rhirayamaaan
 
 
 ## ABテスト現状
@@ -316,26 +323,23 @@ ABテストは逆にnpmのパーツを使わなければよいだけ。
 - YahooのWebフロントエンドが見えなくなる
 
 
-### Webフロント技術室
-自己紹介  
-Angular.js (JS!)  
-
-## Webフロントエンドに強い集団
+## Webフロント技術室
+### Webフロントエンドに強い集団
 CTOの直下にあるので距離が近い
 
-## 半年間何をやったか
+### 半年間何をやったか
 - よく使われているライブラリの効率化  
 - 統一したパフォーマンスの計測方法の検討  
 - 健康状態の把握  
 - 技術選定  
 
 
-## 健康状態の把握
+### 健康状態の把握
 全サービスのフロントエンドの環境を入力してもらう  
   
 エンジニア・デザイナー両方書く
 
-## 方針
+### 方針
 **TypeScriptの採用**
 
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">デザイナーもJS書く前提というのが驚き<br> <a href="https://twitter.com/hashtag/devsumi?src=hash&amp;ref_src=twsrc%5Etfw">#devsumi</a>  <a href="https://twitter.com/hashtag/devsumiB?src=hash&amp;ref_src=twsrc%5Etfw">#devsumiB</a></p>&mdash; かみけん (@_kamykn_) <a href="https://twitter.com/_kamykn_/status/1095938440544149504?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>

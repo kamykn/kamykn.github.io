@@ -242,10 +242,11 @@
               <p>デブサミ1日目に行ってきました！初デブサミ、初雅叙園！<br />
 今回は引き続きKubernetesの話とYahooさんのフロントエンドとかがお目当てです。</p>
 
-<p><img src="https://kamykn.github.io/images/post/2019-02-14/01.jpg" alt="デブサミ2019" title="デブサミ2019" /></p>
+<p><img src="https://kamykn.github.io/images/post/2019-02-14/01.jpg" alt="デブサミ2019" title="デブサミ2019" />
+(こちらの画像は1日目の12:50頃の言語投票状況)</p>
 
-<p>(なお、こちらは14日の分の記事で、15日は私は通常通り業務に戻るので明日は参加しない予定になります。)
-今回もいくつかセッション聞いてきたのですが、いくつかピックアップしてログとして残しておきます。</p>
+<p>今回もいくつかセッション聞いてきたのですが、いくつかピックアップしてログとして残しておきます。
+(なお、こちらは14日の分の記事で、15日は私は通常通り業務に戻るので明日は参加しない予定になります。)</p>
 
 <h1 id="github-actions">GitHub Actions</h1>
 
@@ -306,12 +307,16 @@ github: ikeike443</p>
 <ul>
 <li>EKS用意してください</li>
 
-<li><p>シークレットなAPI(octocatの名言AA)</p>
+<li><p>(ちょっと横道にそれて)シークレットなAPIの紹介</p>
+
+<ul>
+<li>octocatの名言AA
 
 <ul>
 <li><a href="https://api.github.com/octocat">https://api.github.com/octocat</a></li>
 <li><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Githubの隠れAPIとのこと <a href="https://t.co/NN3qYStiMC">https://t.co/NN3qYStiMC</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095877004526641154?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
+</ul></li>
 </ul></li>
 
 <li><p>リッチGUIで現在どれが処理されているかわかる</p></li>
@@ -339,7 +344,7 @@ github: ikeike443</p>
 
 <h2 id="情報を得るには">情報を得るには</h2>
 
-<p>GithubActionsというオーガニゼーションがあるので見てね<br />
+<p>GithubActionsというOrganizationがあるので見てね<br />
 マーケットプレースにAction登録できる<br />
 awesome actionsという個人のブランチがある</p>
 
@@ -364,12 +369,15 @@ Masaya Aoyamaさん</p>
 
 <h2 id="cloudnativeに適したアーキテクチャー">CloudNativeに適したアーキテクチャー</h2>
 
-<p>マイクロサービス
-- マイクロサービスごとに技術選定
-- 大規模な開発(部門ごとの専門化)
-- デプロイ
-- スケーチング
-- 障害が全体に波及しづらい</p>
+<p>マイクロサービス</p>
+
+<ul>
+<li>マイクロサービスごとに技術選定</li>
+<li>大規模な開発(部門ごとの専門化)</li>
+<li>デプロイ</li>
+<li>スケーチング</li>
+<li>障害が全体に波及しづらい</li>
+</ul>
 
 <h2 id="service-mesh-architecture">Service Mesh Architecture</h2>
 
@@ -391,14 +399,18 @@ Masaya Aoyamaさん</p>
 
 <h3 id="dockerコンテナの起動とは">Dockerコンテナの起動とは</h3>
 
-<p>新たなレイヤを作成して起動すること<br />
-- 新たなread write可能なレイヤが追加されただけのイメージ</p>
+<p>新たなレイヤを作成して起動すること</p>
+
+<ul>
+<li>新たなread write可能なレイヤが追加されただけのイメージ</li>
+</ul>
 
 <p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">今日のデブサミのKubernetesスライドの、Dockerfileの内容に対応してDockerコンテナの中のレイヤが増えていくイメージが、すごくなるほど感があった。<a href="https://t.co/CdGGpR6KAR">https://t.co/CdGGpR6KAR</a> <a href="https://t.co/CeSUmx8LaF">pic.twitter.com/CeSUmx8LaF</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1096076501747851265?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
 
-<p>DockerfileのRUNの単位でハッシュを持っているのはそれ分のレイヤが作られているイメージで、
-コンテナはベースのimageにそのレイヤが増えているイメージなのか・・・！</p>
+<p>DockerfileのRUNとかの単位でハッシュを持っているのは、分離したレイヤが作られているから。<br />
+ベースのimageにそれらのレイヤが適用されていってbuildされているということなのか・・・！<br />
+そしてコンテナ起動は最後のReadWriteなレイヤが追加されるということだと。なるほど。</p>
 
 <h2 id="kubernetes">kubernetes</h2>
 
@@ -423,8 +435,7 @@ Masaya Aoyamaさん</p>
 <li>ロードバランサへの追加</li>
 </ul>
 
-<p>Developerはマニフェストを変更するだけ<br />
-何秒間隔で、何台ずつ、</p>
+<p>Developerはマニフェストを変更するだけ</p>
 
 <ul>
 <li>KubernetesはGoogkeが社内で数年使っていた
@@ -452,10 +463,13 @@ Masaya Aoyamaさん</p>
 <br /></li>
 </ul>
 
-<p><strong>例: エアコンならば</strong>
-- 30度
-- 30度との差
-- 上げる</p>
+<p><strong>例: エアコンならば</strong></p>
+
+<ul>
+<li>30度</li>
+<li>30度との差</li>
+<li>上げる</li>
+</ul>
 
 <p>ReplicaSetなどの基本的なリソースも同様</p>
 
@@ -481,9 +495,11 @@ Kubernetes + linkerd(Service Mesh)</p>
 
 <h1 id="ヤフー株式会社におけるフロントエンドの取り組み">ヤフー株式会社におけるフロントエンドの取り組み</h1>
 
-<p>向井 咲人さん
-平山 涼也さん
-森本 恭平さん</p>
+<ul>
+<li>向井 咲人さん</li>
+<li>平山 涼也さん</li>
+<li>森本 恭平さん</li>
+</ul>
 
 <h2 id="登壇に至った経緯">登壇に至った経緯</h2>
 
@@ -518,23 +534,26 @@ Kubernetes + linkerd(Service Mesh)</p>
 
 <h2 id="数字">数字</h2>
 
-<p>従業員数: 6618人
-エンジニア: 2600人
-サービス数: 100サービス</p>
+<ul>
+<li>従業員数: 6618人</li>
+<li>エンジニア: 2600人</li>
+<li>サービス数: 100サービス</li>
+</ul>
 
-<h2 id="どんなサービスフロントエンド">どんなサービスフロントエンド</h2>
+<h2 id="どんなサービスにフロントエンドエンジニアリングしてる">どんなサービスにフロントエンドエンジニアリングしてる？</h2>
 
 <p>広告入稿管理画面のフロントエンド<br />
 Yahoo ディスプレイネットワーク (YDN)</p>
 
-<p>フロントエンドの開発チー布人数: 訳１２人<br />
-開発している年数: 10年</p>
-
-<p>2年前: jQuety PHP<br />
-今: React + TypeScript * Redux + node.js</p>
+<ul>
+<li>フロントエンドの開発チー布人数: 訳１２人</li>
+<li>開発している年数: 10年</li>
+<li>2年前: jQuety PHP</li>
+<li>今: React + TypeScript * Redux + node.js</li>
+</ul>
 
 <p>刷新をしながらもビジネス要件の機能開発を進めなければならない<br />
-並行して3〜4この機能開発が進んでいく<br />
+並行して3〜4個の機能開発が進んでいく<br />
 コードレビューの時間が爆増</p>
 
 <h2 id="フロントエンドエンジニア人数">フロントエンドエンジニア人数</h2>
@@ -578,9 +597,11 @@ LintやPrettier<br />
 <p>YahooShopping ABテストを回しまくっている<br />
 検索ページの刷新中</p>
 
-<h2 id="qiita-rhirayamaaan">qiita: rhirayamaaan</h2>
+<h2 id="atomic-designってデザイナーには難しくない-という話">Atomic Designってデザイナーには難しくない！？という話</h2>
 
-<p>Atomic デザインって難しくない？って記事</p>
+<p><a href="https://qiita.com/rhirayamaaan/items/7f990e146ec01f2e7e08">https://qiita.com/rhirayamaaan/items/7f990e146ec01f2e7e08</a></p>
+
+<p>qiita: rhirayamaaan</p>
 
 <h2 id="abテスト現状">ABテスト現状</h2>
 
@@ -627,16 +648,13 @@ LintやPrettier<br />
 <li>YahooのWebフロントエンドが見えなくなる</li>
 </ul>
 
-<h3 id="webフロント技術室">Webフロント技術室</h3>
+<h2 id="webフロント技術室">Webフロント技術室</h2>
 
-<p>自己紹介<br />
-Angular.js (JS!)</p>
-
-<h2 id="webフロントエンドに強い集団">Webフロントエンドに強い集団</h2>
+<h3 id="webフロントエンドに強い集団">Webフロントエンドに強い集団</h3>
 
 <p>CTOの直下にあるので距離が近い</p>
 
-<h2 id="半年間何をやったか">半年間何をやったか</h2>
+<h3 id="半年間何をやったか">半年間何をやったか</h3>
 
 <ul>
 <li>よく使われているライブラリの効率化<br /></li>
@@ -645,13 +663,13 @@ Angular.js (JS!)</p>
 <li>技術選定<br /></li>
 </ul>
 
-<h2 id="健康状態の把握">健康状態の把握</h2>
+<h3 id="健康状態の把握">健康状態の把握</h3>
 
 <p>全サービスのフロントエンドの環境を入力してもらう</p>
 
 <p>エンジニア・デザイナー両方書く</p>
 
-<h2 id="方針">方針</h2>
+<h3 id="方針">方針</h3>
 
 <p><strong>TypeScriptの採用</strong></p>
 
