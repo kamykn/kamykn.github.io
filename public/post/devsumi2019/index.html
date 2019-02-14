@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.52 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="kamykn">
+<meta name="keywords" content="Developer Summit 2019, event">
+<meta name="description" content="デブサミ1日目に行ってきました！初デブサミ、初雅叙園！
+今回は引き続きKubernetesの話とYahooさんのフロントエンドとかがお目当てです。">
+
+
+<meta property="og:description" content="デブサミ1日目に行ってきました！初デブサミ、初雅叙園！
+今回は引き続きKubernetesの話とYahooさんのフロントエンドとかがお目当てです。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Devsumi2019">
+<meta name="twitter:title" content="Devsumi2019">
+<meta property="og:url" content="https://kamykn.github.io/post/devsumi2019/">
+<meta property="twitter:url" content="https://kamykn.github.io/post/devsumi2019/">
+<meta property="og:site_name" content="kamykn techlog">
+<meta property="og:description" content="デブサミ1日目に行ってきました！初デブサミ、初雅叙園！
+今回は引き続きKubernetesの話とYahooさんのフロントエンドとかがお目当てです。">
+<meta name="twitter:description" content="デブサミ1日目に行ってきました！初デブサミ、初雅叙園！
+今回は引き続きKubernetesの話とYahooさんのフロントエンドとかがお目当てです。">
+<meta property="og:locale" content="ja-jp">
+
+  
+    <meta property="article:published_time" content="2019-02-14T11:01:03">
+  
+  
+    <meta property="article:modified_time" content="2019-02-14T11:01:03">
+  
+  
+  
+  
+    
+      <meta property="article:tag" content="event">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@_kamykn_">
+
+
+  <meta name="twitter:creator" content="@_kamykn_">
+
+
+
+
+
+
+  <meta property="og:image" content="https://kamykn.github.io/images/post/2019-02-14/01.jpg">
+  <meta property="twitter:image" content="https://kamykn.github.io/images/post/2019-02-14/01.jpg">
+
+
+
+
+
+  <meta property="og:image" content="https://kamykn.github.io/images/icon/kamykn.jpg">
+  <meta property="twitter:image" content="https://kamykn.github.io/images/icon/kamykn.jpg">
+
+
+    <title>Devsumi2019</title>
+
+    <link rel="icon" href="https://kamykn.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://kamykn.github.io/post/devsumi2019/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://kamykn.github.io/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://kamykn.github.io/css/mystyle.css">
+      
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://kamykn.github.io/">kamykn techlog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://kamykn.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://kamykn.github.io/images/icon/kamykn.jpg" alt="" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://kamykn.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://kamykn.github.io/images/icon/kamykn.jpg" alt="" />
+        </a>
+        <h4 class="sidebar-profile-name">kamykn</h4>
+        
+          <h5 class="sidebar-profile-bio">kamykn(かみけん)の<br />イベント参加や日常のログ</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kamykn.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kamykn.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kamykn.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About Me</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/kamykn" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://qiita.com/kamykn" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon sidebar-custom-button-icon"><img src="https://kamykn.github.io/images/icon/q.png"></i>
+      
+      <span class="sidebar-button-desc">Qiita</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://kamykn.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Devsumi2019
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-02-14T11:01:03&#43;09:00">
+        
+  
+  
+  
+  
+    Thu, Feb 14, 2019
+  
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>デブサミ1日目に行ってきました！初デブサミ、初雅叙園！<br />
+今回は引き続きKubernetesの話とYahooさんのフロントエンドとかがお目当てです。</p>
+
+<p>(なお、こちらは14日の分の記事で、15日は私は通常通り業務に戻るので明日は参加しない予定になります。)
+今回もいくつかセッション聞いてきたのですが、いくつかピックアップしてログとして残しておきます。</p>
+
+<h1 id="github-actions">GitHub Actions</h1>
+
+<p>Takahumi Ikeda さん<br />
+Solutions Engineer GitHub<br />
+github: ikeike443</p>
+
+<h2 id="ソフトウェア開発の障壁">ソフトウェア開発の障壁</h2>
+
+<p>障壁は下がったがツールが増えすぎた<br />
+いろいろなソフトくっつける作業がエンジニアのメインのタスクではない<br />
+これをGitHubActionで変えたい</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">世の中にはツール増えすぎてるの図<br> <a href="https://twitter.com/hashtag/devsumi?src=hash&amp;ref_src=twsrc%5Etfw">#devsumi</a> <a href="https://twitter.com/hashtag/devsumiA?src=hash&amp;ref_src=twsrc%5Etfw">#devsumiA</a> <a href="https://t.co/wVJWruYY29">pic.twitter.com/wVJWruYY29</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095868972564529152?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="cloud-native-landscape">Cloud Native Landscape</h2>
+
+<p>ツール増えすぎてる<br />
+モジュール化されるべきで、簡単に取捨選択できるべき</p>
+
+<h2 id="github-actions-1">GitHub Actions</h2>
+
+<ul>
+<li>Actionsの実態はDockerFileらしい</li>
+<li>コンテナ技術ベース</li>
+<li>ワークフロー as Code</li>
+</ul>
+
+<h2 id="手順">手順</h2>
+
+<h3 id="actionの作成">Actionの作成</h3>
+
+<ul>
+<li>Action を格納するリポジトリを作る</li>
+<li>Dockerfileを作る</li>
+<li>entrypoint.sh</li>
+</ul>
+
+<h3 id="ワークフローの作成">ワークフローの作成</h3>
+
+<ul>
+<li>GUIで流れを紐づけ</li>
+<li>PullRequest作って実行してみる</li>
+<li>暫くすると実行されて結果が見れる</li>
+</ul>
+
+<h3 id="ワークフローの変更">ワークフローの変更</h3>
+
+<ul>
+<li>最初は上とおんなじ感じ</li>
+<li>普通のPullRequestと同じ感じで変更できる</li>
+<li>結果を見る</li>
+</ul>
+
+<h2 id="デモ">デモ</h2>
+
+<ul>
+<li>EKS用意してください</li>
+
+<li><p>シークレットなAPI(octocatの名言AA)</p>
+
+<ul>
+<li><a href="https://api.github.com/octocat">https://api.github.com/octocat</a></li>
+<li><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Githubの隠れAPIとのこと <a href="https://t.co/NN3qYStiMC">https://t.co/NN3qYStiMC</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095877004526641154?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></li>
+</ul></li>
+
+<li><p>リッチGUIで現在どれが処理されているかわかる</p></li>
+</ul>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">結構リッチなUIだなぁ<br> <a href="https://twitter.com/hashtag/devsumiA?src=hash&amp;ref_src=twsrc%5Etfw">#devsumiA</a>  <a href="https://twitter.com/hashtag/devsumi?src=hash&amp;ref_src=twsrc%5Etfw">#devsumi</a> <a href="https://t.co/skULs8FG2n">pic.twitter.com/skULs8FG2n</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095875393796489217?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="現状想定している仕様">現状想定している仕様</h2>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Github Actions の現状の仕様<br> <a href="https://twitter.com/hashtag/devsumi?src=hash&amp;ref_src=twsrc%5Etfw">#devsumi</a>  <a href="https://twitter.com/hashtag/devsumiA?src=hash&amp;ref_src=twsrc%5Etfw">#devsumiA</a> <a href="https://t.co/G7buthz30l">pic.twitter.com/G7buthz30l</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095873010626527233?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">もう少しあった <a href="https://t.co/GtGYYXXEOc">pic.twitter.com/GtGYYXXEOc</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095873223516770304?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">βなので変わる可能性あるので、使う際には最新のドキュメント読んでね！<br>とのこと</p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095873456082567168?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="callback">Callback</h2>
+
+<h3 id="repository-dispatch">Repository Dispatch</h3>
+
+<p>外に任意にトリガーできるイベント</p>
+
+<h2 id="情報を得るには">情報を得るには</h2>
+
+<p>GithubActionsというオーガニゼーションがあるので見てね<br />
+マーケットプレースにAction登録できる<br />
+awesome actionsという個人のブランチがある</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>ワークフローはモジュラー化される。<br />
+あと、デモで使っていたinsomnia というAPI実行ツールが気になりました。
+<a href="https://insomnia.rest/">https://insomnia.rest/</a></p>
+
+<h1 id="cloud-native-時代におけるdocker-kubernetesによる開発">Cloud Native 時代におけるDocker / Kubernetesによる開発</h1>
+
+<p>CyberAgent adtech studio<br />
+Masaya Aoyamaさん</p>
+
+<p>資料はこちらです<br />
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">これからデブサミで登壇します。たくさん来ていただいてありがたみ。<br>「SHARE YOUR FUN」がテーマらしいので、ひとこと。<br>Kubernetes だいすき。<br><br>「Cloud Native 時代における Docker / Kubernetes による開発」<a href="https://t.co/jRTvaTh5Aq">https://t.co/jRTvaTh5Aq</a><a href="https://twitter.com/hashtag/devsumi?src=hash&amp;ref_src=twsrc%5Etfw">#devsumi</a> <a href="https://twitter.com/hashtag/devsumiA?src=hash&amp;ref_src=twsrc%5Etfw">#devsumiA</a></p>&mdash; MasayaAoyama（青山 真也） (@amsy810) <a href="https://twitter.com/amsy810/status/1095896443141799941?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">インスタ映えするKubernetesクラスタの図<br><br>🤔<br> <a href="https://twitter.com/hashtag/devsumi?src=hash&amp;ref_src=twsrc%5Etfw">#devsumi</a>  <a href="https://twitter.com/hashtag/devsumiA?src=hash&amp;ref_src=twsrc%5Etfw">#devsumiA</a> <a href="https://t.co/IFVhTgjygG">pic.twitter.com/IFVhTgjygG</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095897382099681281?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+やばい人北。</p>
+
+<h2 id="cloudnativeに適したアーキテクチャー">CloudNativeに適したアーキテクチャー</h2>
+
+<p>マイクロサービス
+- マイクロサービスごとに技術選定
+- 大規模な開発(部門ごとの専門化)
+- デプロイ
+- スケーチング
+- 障害が全体に波及しづらい</p>
+
+<h2 id="service-mesh-architecture">Service Mesh Architecture</h2>
+
+<p>500+のマイクロサービスを監視するのは難しい。</p>
+
+<ul>
+<li>Microservice間通信のモニタリング(メトリクス収集)</li>
+<li>Traffic shifting (Canary release)</li>
+<li>従来の青瓜ケーション側で制御していた機能を分離</li>
+<li>開発者はアプリケーションのロジックのみに集中できる</li>
+</ul>
+
+<h3 id="srvice-meshを利用することで">Srvice Meshを利用することで</h3>
+
+<p>Microservice間の<br />
+├可観測性を確保<br />
+├柔軟な通信の制御<br />
+└暗号化</p>
+
+<h3 id="dockerコンテナの起動とは">Dockerコンテナの起動とは</h3>
+
+<p>新たなレイヤを作成して起動すること<br />
+- 新たなread write可能なレイヤが追加されただけのイメージ</p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">今日のデブサミのKubernetesスライドの、Dockerfileの内容に対応してDockerコンテナの中のレイヤが増えていくイメージが、すごくなるほど感があった。<a href="https://t.co/CdGGpR6KAR">https://t.co/CdGGpR6KAR</a> <a href="https://t.co/CeSUmx8LaF">pic.twitter.com/CeSUmx8LaF</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1096076501747851265?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>DockerfileのRUNの単位でハッシュを持っているのはそれ分のレイヤが作られているイメージで、
+コンテナはベースのimageにそのレイヤが増えているイメージなのか・・・！</p>
+
+<h2 id="kubernetes">kubernetes</h2>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">他のオーケストレーションツールではなく、kubernetesが支持されるのはコンテナ技術の標準に沿っているから <a href="https://twitter.com/hashtag/devsumiA?src=hash&amp;ref_src=twsrc%5Etfw">#devsumiA</a> <a href="https://twitter.com/hashtag/devsumi?src=hash&amp;ref_src=twsrc%5Etfw">#devsumi</a> <a href="https://t.co/IIG07V8hQ3">pic.twitter.com/IIG07V8hQ3</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095902310629163008?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h3 id="replicasetとself-healing">ReplicaSetとSelf-Healing</h3>
+
+<ul>
+<li>ReplicaSetではコンテナのReplica数を維持し続ける
+
+<ul>
+<li>= Node障害等で コンテナが不足した場合、別のNode上で起動</li>
+</ul></li>
+</ul>
+
+<h3 id="replicasetとrolling-update">ReplicaSetとRolling Update</h3>
+
+<ul>
+<li>ロードバランサからの除外</li>
+<li>コンテナイメージのアップデート</li>
+<li>ロードバランサへの追加</li>
+</ul>
+
+<p>Developerはマニフェストを変更するだけ<br />
+何秒間隔で、何台ずつ、</p>
+
+<ul>
+<li>KubernetesはGoogkeが社内で数年使っていた
+
+<ul>
+<li>コンテナクラスタマネージャBorgをベースにOSS化したもの</li>
+<li>様々なワークロードへの対応洗練化された自動化、拡張性</li>
+</ul></li>
+<li>抽象化されており、ネットワークの操作などもYAMLを書くだけ
+
+<ul>
+<li>OPSだけが使うものではなくDEVも使うもの</li>
+</ul></li>
+</ul>
+
+<h2 id="分散システムとしてのkubernetes">分散システムとしてのKubernetes</h2>
+
+<h3 id="control-loop">Control Loop</h3>
+
+<ul>
+<li>現在の状態を観測</li>
+<li>現在の状態と理想状態を比較</li>
+<li>差分に対処する処理を実施
+
+<br /></li>
+</ul>
+
+<p><strong>例: エアコンならば</strong>
+- 30度
+- 30度との差
+- 上げる</p>
+
+<p>ReplicaSetなどの基本的なリソースも同様</p>
+
+<h2 id="custom-resource-definition">Custom Resource Definition</h2>
+
+<p>マニフェストの登録 → マネージドサービスへの操作<br />
+例: Kubernetes上にPodを起動してQueueクラスタを展開</p>
+
+<h2 id="ci-cd">CI/CD</h2>
+
+<p>GitOps<br />
+Single Source of Truece (私はVue.jsで初めてこの言葉に出会いましたが、Vue.js以外でも通用する言葉なんですね)</p>
+
+<h2 id="攻めた銀行">攻めた銀行</h2>
+
+<p><strong>Monzo bank</strong> <a href="https://monzo.com/">https://monzo.com/</a><br />
+Kubernetes + linkerd(Service Mesh)</p>
+
+<h2 id="まとめ-1">まとめ</h2>
+
+<p>これ買うと良い・・・！<br />
+<a href="https://www.amazon.co.jp/dp/4295004804/ref=asc_df_42950048042585734/?tag=jpgo-22&amp;creative=9303&amp;creativeASIN=4295004804&amp;linkCode=df0&amp;hvadid=295704876452&amp;hvpos=1o1&amp;hvnetw=g&amp;hvrand=17930246126622535468&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=1009300&amp;hvtargid=pla-525497287608&amp;th=1&amp;psc=1">https://www.amazon.co.jp/dp/4295004804/ref=asc_df_42950048042585734/?tag=jpgo-22&amp;creative=9303&amp;creativeASIN=4295004804&amp;linkCode=df0&amp;hvadid=295704876452&amp;hvpos=1o1&amp;hvnetw=g&amp;hvrand=17930246126622535468&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=1009300&amp;hvtargid=pla-525497287608&amp;th=1&amp;psc=1</a></p>
+
+<h1 id="ヤフー株式会社におけるフロントエンドの取り組み">ヤフー株式会社におけるフロントエンドの取り組み</h1>
+
+<p>向井 咲人さん
+平山 涼也さん
+森本 恭平さん</p>
+
+<h2 id="登壇に至った経緯">登壇に至った経緯</h2>
+
+<p>ヤフーのwebフロント絵hんどの技術選定についてテックブログを書いた<br />
+<a href="https://techblog.yahoo.co.jp/advent-calendar-2018/yahoo-frontend/">https://techblog.yahoo.co.jp/advent-calendar-2018/yahoo-frontend/</a></p>
+
+<p>(新たにWebフロント技術室という部署が出来上がって、その一環で調査をしたものを記事にしたっぽいです。)</p>
+
+<h2 id="ヤフー株式会社について">ヤフー株式会社について</h2>
+
+<p>カンパニー制度性</p>
+
+<p>検索: ヤフー組織図</p>
+
+<ul>
+<li>メディアカンパニー
+
+<ul>
+<li>トップページとか</li>
+</ul></li>
+<li>コマースカンパニー
+
+<ul>
+<li>ショッピングとか</li>
+</ul></li>
+<li>CTO
+
+<ul>
+<li>システム統括本部</li>
+</ul></li>
+</ul>
+
+<h2 id="数字">数字</h2>
+
+<p>従業員数: 6618人
+エンジニア: 2600人
+サービス数: 100サービス</p>
+
+<h2 id="どんなサービスフロントエンド">どんなサービスフロントエンド</h2>
+
+<p>広告入稿管理画面のフロントエンド<br />
+Yahoo ディスプレイネットワーク (YDN)</p>
+
+<p>フロントエンドの開発チー布人数: 訳１２人<br />
+開発している年数: 10年</p>
+
+<p>2年前: jQuety PHP<br />
+今: React + TypeScript * Redux + node.js</p>
+
+<p>刷新をしながらもビジネス要件の機能開発を進めなければならない<br />
+並行して3〜4この機能開発が進んでいく<br />
+コードレビューの時間が爆増</p>
+
+<h2 id="フロントエンドエンジニア人数">フロントエンドエンジニア人数</h2>
+
+<p>刷新: 3〜10人<br />
+機能開発: 3〜4人</p>
+
+<h2 id="取り組んだこと">取り組んだこと</h2>
+
+<p>規約の導入<br />
+LintやPrettier<br />
+ツールはGitBookを使う</p>
+
+<h3 id="danger">Danger</h3>
+
+<p>PRを出すときに行うことを自動化<br />
+レビューメンバーの自動アサインやラベルヒモ付など多数のことをできる</p>
+
+<h2 id="typescriptの導入">TypeScriptの導入</h2>
+
+<p>静的型付けによりコンパイル時にエラーが出る<br />
+絹修正時に漏れがなくバグを事前に防げている</p>
+
+<h2 id="atomic-designの導入">Atomic Designの導入</h2>
+
+<p>コンポーネントの粒度を揃える<br />
+・Atoms molecules Organismsという共通言語を作る</p>
+
+<h2 id="コンポーネントガイドの導入">コンポーネントガイドの導入</h2>
+
+<h2 id="redux層の分割">Redux層の分割</h2>
+
+<p>ファイル構成にre-ducksを採用</p>
+
+<h2 id="日々素振りを続けて課題に挑む">日々素振りを続けて課題に挑む</h2>
+
+<p>他にも課題はある、この先まだ道な課題も出てくる</p>
+
+<h2 id="コマースカンパニーの取り組み">コマースカンパニーの取り組み</h2>
+
+<p>YahooShopping ABテストを回しまくっている<br />
+検索ページの刷新中</p>
+
+<h2 id="qiita-rhirayamaaan">qiita: rhirayamaaan</h2>
+
+<p>Atomic デザインって難しくない？って記事</p>
+
+<h2 id="abテスト現状">ABテスト現状</h2>
+
+<p>企画: 1週間<br />
+制作: 1週間<br />
+開発: 2週間<br />
+それをミルフィーユ状に</p>
+
+<h2 id="uiパーツ集の作成">UIパーツ集の作成</h2>
+
+<p>UIパーツを抽出し共通化</p>
+
+<h2 id="uiパーツ">UIパーツ</h2>
+
+<p>社内限定(npm限定)</p>
+
+<p>ABテストは逆にnpmのパーツを使わなければよいだけ。<br />
+エンジニアも気軽にABテストのデザインが作れる(パーツを利用するだけなので)</p>
+
+<h2 id="パーツの社内npmでの管理">パーツの社内npmでの管理</h2>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">パーツの社内限定 npmパッケージ化いいな〜<br>   <a href="https://twitter.com/hashtag/devsumi?src=hash&amp;ref_src=twsrc%5Etfw">#devsumi</a> <a href="https://twitter.com/hashtag/devsumiB?src=hash&amp;ref_src=twsrc%5Etfw">#devsumiB</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095935180374663168?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="デザイナーはデザイン-リサーチに時間をかけられる">デザイナーはデザイン・リサーチに時間をかけられる</h2>
+
+<p>簡単なものならモックがいらない<br />
+(パーツ利用で)数字によって証明された質の高いデザインばかりになる(はず)</p>
+
+<h2 id="webデザイン開発室">Webデザイン開発室</h2>
+
+<p>サービスの区切りを縦の組織とする<br />
+その縦の組織に特化したほうが成長も速いし効率も良い<br />
+もちろん会社には必要</p>
+
+<p>が、<br />
+個別最適化されてしまう</p>
+
+<h3 id="リソースが無いところはモダン化されていない">リソースが無いところはモダン化されていない</h3>
+
+<ul>
+<li>人材流動ができない</li>
+<li>ナレッジが会社に残らない</li>
+<li>YahooのWebフロントエンドが見えなくなる</li>
+</ul>
+
+<h3 id="webフロント技術室">Webフロント技術室</h3>
+
+<p>自己紹介<br />
+Angular.js (JS!)</p>
+
+<h2 id="webフロントエンドに強い集団">Webフロントエンドに強い集団</h2>
+
+<p>CTOの直下にあるので距離が近い</p>
+
+<h2 id="半年間何をやったか">半年間何をやったか</h2>
+
+<ul>
+<li>よく使われているライブラリの効率化<br /></li>
+<li>統一したパフォーマンスの計測方法の検討<br /></li>
+<li>健康状態の把握<br /></li>
+<li>技術選定<br /></li>
+</ul>
+
+<h2 id="健康状態の把握">健康状態の把握</h2>
+
+<p>全サービスのフロントエンドの環境を入力してもらう</p>
+
+<p>エンジニア・デザイナー両方書く</p>
+
+<h2 id="方針">方針</h2>
+
+<p><strong>TypeScriptの採用</strong></p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">デザイナーもJS書く前提というのが驚き<br> <a href="https://twitter.com/hashtag/devsumi?src=hash&amp;ref_src=twsrc%5Etfw">#devsumi</a>  <a href="https://twitter.com/hashtag/devsumiB?src=hash&amp;ref_src=twsrc%5Etfw">#devsumiB</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095938440544149504?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="und" dir="ltr"><a href="https://twitter.com/hashtag/devsumi?src=hash&amp;ref_src=twsrc%5Etfw">#devsumi</a> <a href="https://twitter.com/hashtag/devsumiB?src=hash&amp;ref_src=twsrc%5Etfw">#devsumiB</a> <a href="https://t.co/GYylFOv4dY">pic.twitter.com/GYylFOv4dY</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095938822951514112?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-conversation="none" data-lang="ja"><p lang="ja" dir="ltr">CSS周り版 <a href="https://t.co/6qmzCcMXQ0">pic.twitter.com/6qmzCcMXQ0</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095939086466969601?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">この前のスライドで、TypeScriptめ進めていきます的な宣言があったりした <a href="https://t.co/RDdFfVOyDf">pic.twitter.com/RDdFfVOyDf</a></p>&mdash; かみけん (@<em>kamykn</em>) <a href="https://twitter.com/_kamykn_/status/1095939840053366785?ref_src=twsrc%5Etfw">2019年2月14日</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="まとめ-2">まとめ</h2>
+
+<p>TypeScriptとKubernetesやりてえ…という想いが密かに熱くなっています。<br />
+TypeScriptは少しAngularやったときに触ったけど、Kubernetesはどうしたもんか…やはりインスタ映えクラスタか…？🤔<br />
+次個人でJS触るときは絶対にTypeScriptにしよう!</p>
+
+<p>イベントの感想としては、大手企業がこんなに一同に集まるイベントなかなかないのでは？と思ったのと、それに伴っていろいろとリッチだなと感じました(無料で参加しているのに会場(雅叙園)とか、お弁当(今半すきやき弁当)とか・・・！)<br />
+自分としても興味のある企業がたくさんあったので興味のある内容が多かったですし、刺激もたくさん受けましたのでまた来年も来たいなと思いました。</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small"></span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://kamykn.github.io/tags/event/">event</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/yahoo-japan-tech-conference-2019/" data-tooltip="Yahoo! JAPAN Tech Conference 2019">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kamykn.github.io/post/devsumi2019/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kamykn.github.io/post/devsumi2019/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+    </ul>
+  
+</div>
+
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 kamykn. 
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://kamykn.github.io/post/yahoo-japan-tech-conference-2019/" data-tooltip="Yahoo! JAPAN Tech Conference 2019">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://kamykn.github.io/post/devsumi2019/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://kamykn.github.io/post/devsumi2019/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+    </ul>
+  
+</div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkamykn.github.io%2Fpost%2Fdevsumi2019%2F">
+          <i class="fa fa-facebook-official"></i><span>%!(EXTRA string=Facebook)</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fkamykn.github.io%2Fpost%2Fdevsumi2019%2F">
+          <i class="fa fa-twitter"></i><span>%!(EXTRA string=Twitter)</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://kamykn.github.io/images/icon/kamykn.jpg" alt="" />
+    
+    <h4 id="about-card-name">kamykn</h4>
+    
+      <div id="about-card-bio">kamykn(かみけん)の<br />イベント参加や日常のログ</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Serverside And Frontend Engineer.
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Japan
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/devsumi2019/">
+                <h3 class="media-heading">Devsumi2019</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>デブサミ1日目に行ってきました！初デブサミ、初雅叙園！<br />
+今回は引き続きKubernetesの話とYahooさんのフロントエンドとかがお目当てです。</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/yahoo-japan-tech-conference-2019/">
+                <h3 class="media-heading">Yahoo! JAPAN Tech Conference 2019</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>久々のイベント参加です！<br />
+Yahoo! JAPANのTech Conference 2019に参加してきました！</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/vimconf_2018/">
+                <h3 class="media-heading">Vimconf_2018</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>今年も行きました！VimConf！
+去年も参加した身ですが、今年はなんと言ってもVimの父であるBramが来るということで、EarlyBirdチケットとって参加してきました！</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/vimconf.swp-2018/">
+                <h3 class="media-heading">vimconf.swp 2018</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>.vimconf.swp行ってきました〜！<br />
+今回のイベントはVimConf2018のRubyで言うところのRejectKaigiに当たるようなものだそうで、<br />
+VimConfでは惜しくも採択されなかった発表やVimConf準備の舞台の裏話が聞けるかもということで楽しみにしてました😊</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/%E5%9F%B7%E7%AD%86%E3%81%AE%E6%8A%80%E8%A1%93%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%99%E3%82%8B%E4%BC%9A/">
+                <h3 class="media-heading">執筆の技術を勉強する会</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>今回は『執筆の技術を勉強する会』に参加してきました！<br />
+最近自分の会社でも技術書展5を受けてやりたい機運が高まってきているようなので、<br />
+お題的にもレアなこの会に参加してきました😊</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/%E6%97%A5%E3%80%85%E3%81%AE%E3%82%A2%E3%82%A6%E3%83%88%E3%83%97%E3%83%83%E3%83%88%E3%81%8C%E5%A4%89%E3%81%88%E3%82%8B%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%A9%E3%82%A4%E3%83%95/">
+                <h3 class="media-heading">日々のアウトプットが変える！あなたのエンジニア・ライフ</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>本日はLIFULLさんの会場で<br />
+日々のアウトプットが変える！あなたのエンジニア・ライフ<br />
+という表題のイベントに参加してきました。</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B85/">
+                <h3 class="media-heading">技術書典5</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>技術書典5に参加してきました！<br />
+徳を積んだので(?)急遽参加できるようになりまして、<br />
+目的もなく参加したハズが結果としてたくさん買うことに…📗</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/%E7%99%BB%E5%A3%87%E3%81%AE%E6%8A%80%E8%A1%93%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%99%E3%82%8B%E4%BC%9A1/">
+                <h3 class="media-heading">登壇の技術を勉強する会1</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>登壇の技術を勉強する会 に行ってきました！</p>
+
+<p>日本酒美味しかったです(๑´ڡ｀๑)ぺろり</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/googlecloudnext18-day1-gke-on-premkubernetes%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E4%BC%81%E6%A5%AD%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%BD%E3%83%AA%E3%83%A5%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+                <h3 class="media-heading">GoogleCloudNext18 Day1: GKE On-Prem、kubernetesを利用した企業のためのハイブリッドクラウドソリューション</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Google Cloud Nextで個人的に一番ワクワクした発表でした。そのメモをアップしておきます。<br />
+オンプレとGKEというキーワードで移行の話かと勝手に思ってたら全くそうではありませんでした。<br />
+タイトルにもある『ハイブリッド』とはある２つのものが共存して強みが増えることを言いますよね。<br />
+オンプレ環境に目をつけて敢えて使おうというのが今回のお話です。<br />
+※ なお、私自身のKubernetes知識は職場で別事業部で使われているのを見聞きする程度です。</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://kamykn.github.io/post/googlecloudnext18-day1-iot%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%82%A8%E3%83%83%E3%82%B8%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%81%A7%E3%81%AE%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A/">
+                <h3 class="media-heading">GoogleCloudNext18 Day1: IoTを使ったエッジデバイスでの意思決定</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>IoTを使ったエッジデバイスでの意思決定についてのメモを残していきます。<br />
+なお、私は機械学習に関しては経験が無いので自分の理解できた範囲でまとめています。</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         18 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://kamykn.github.io/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://kamykn.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
